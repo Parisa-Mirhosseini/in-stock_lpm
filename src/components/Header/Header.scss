@@ -1,13 +1,19 @@
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
-@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
 
 .header {
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
-
+@include tablet{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    
+}
 
 
     &__Logo {
@@ -23,7 +29,7 @@
         line-height: 20px;
         font-weight: 400;
 
-        @include desktop {
+        @include tablet {
             font-size: 14px;
             line-height: 22px;
         }
@@ -33,7 +39,7 @@
         &--inventory {
             font-family: "Titillium Web", sans-serif;
             color: $cloud;
-            
+
 
             z-index: 1;
 
