@@ -1,6 +1,11 @@
+import Header from "../../src/components/Header/Header";
+
 function WarehousePage() {
-    return <h1>Warehouse Page</h1>;
-  }
-  
-  export default WarehousePage;
-  
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
+export default WarehousePage;

@@ -1,6 +1,13 @@
+import Header from "../../src/components/Header/Header";
+
+
 function InventoryPage() {
-    return <h1>Inventory Page</h1>;
-  }
-  
-  export default InventoryPage;
-  
+  return (
+    <>
+      <Header />
+
+    </>
+  );
+}
+
+export default InventoryPage;

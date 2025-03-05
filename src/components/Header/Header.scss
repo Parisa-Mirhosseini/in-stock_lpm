@@ -1,0 +1,59 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    background-color: $graphite;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+
+
+    &__Logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__links {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+
+        @include desktop {
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+
+        &--warehouses,
+        &--inventory {
+            font-family: "Titillium Web", sans-serif;
+            color: $cloud;
+            
+
+            z-index: 1;
+
+            &:active {
+                background-color: $Black;
+                color: $white;
+                border-radius: 20px;
+                padding: 10px 50px 10px 50px;
+            }
+
+            &:hover {
+                background-color: $Black;
+                color: $white;
+                border-radius: 20px;
+                padding: 10px 50px 10px 50px;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+
+    }
+}
