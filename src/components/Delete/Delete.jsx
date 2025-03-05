@@ -1,10 +1,14 @@
+import closeIcon from "../../Assets/Icons/close-24px.svg";
+
 function Delete() {
   //onclick icon for the garbage icon, to make popup appear and apply styles and template literal for message
   // cancel button to go back to main warehouse page
   //delete button to delete item list from db using api
+  //needs to be located within the warehouse page
   return (
     <div className="delete">
       <div className="delete__white-box">
+        <img src="closeIcon" alt="close icon" />
         <h1 className="delete__title">Delete ___ warehouse?</h1>
         <p className="delete__description">
           Please confirm that you'd like to delete the ___ from the list of
