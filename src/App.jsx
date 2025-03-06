@@ -12,13 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="" element={<WarehouseList />} />
-<<<<<<< HEAD
         <Route path="/warehouses" element={<WarehouseList />} />
         {/* <Route path="/warehouses/add" element={<WarehouseAdd />} /> */}
-=======
-        <Route path="/warehouses" element={<WarehouseList />} />
-        {/* <Route path="/warehouses/add" element={<WarehouseAdd />} />
->>>>>>> develop
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
         {/* <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} />
 
