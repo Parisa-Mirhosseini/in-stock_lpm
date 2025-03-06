@@ -2,7 +2,7 @@ import "./WarehouseMobile.scss";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DeleteWarehouse from "../DeleteWarehouse/DeleteWarehouse";
+// import DeleteWarehouse from "../DeleteWarehouse/DeleteWarehouse";
 
 function WarehouseMobile() {
   const [warehouseList, setWarehouseList] = useState([]);
@@ -14,7 +14,7 @@ function WarehouseMobile() {
 
   const fetchWarehouses = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/warehouses");
+      const response = await axios.get("http://localhost:8080/api/warehouses");
       setWarehouseList(response.data);
     } catch (error) {
       console.error("Failed to fetch warehouses", error);
@@ -27,9 +27,9 @@ function WarehouseMobile() {
 
   return (
     <>
-      {isDialogOpen && (
+      {/* {isDialogOpen && (
         <DeleteWarehouse setIsDialogOpen={setIsDialogOpen} selectedWarehouse={selectedWarehouse} />
-      )}
+      )} */}
 
       <section className="warehouse-details">
         {warehouseList.map((warehouse) => (
