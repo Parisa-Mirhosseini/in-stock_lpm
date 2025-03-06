@@ -1,6 +1,6 @@
 import "./InventoryList.scss";
-import axios from "axios";
 import Inventory from "../../components/Inventory/Inventory.jsx";
+import { Link } from "react-router-dom";
 
 function InventoryList() {
   return (
