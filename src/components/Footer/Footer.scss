@@ -1,0 +1,26 @@
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+
+.footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    background-color: $light-grey;
+    color: $slate;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+    font-size: 11px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 3rem 0;
+
+    @include tablet {
+        font-size: 12px;
+    }
+
+}
