@@ -20,13 +20,16 @@
         display: flex;
         justify-content: center;
         width: 128.59px;
-        height:28px;
+        height: 28px;
 
-        @include tablet{
-           display:flex;
-           justify-content: flex-start;
-           margin-right:auto;
-           margin-left:0;
+        @include tablet {
+            justify-content: left;
+            margin: 0;
+            padding-left: 0;
+        }
+        @include desktop {
+            justify-content: left;
+            margin: 0;
             padding-left: 0;
         }
 
@@ -49,9 +52,10 @@
             padding-right: 24px;
             padding-left: 24px;
         }
-        @include desktop{
-padding-right: 64px;
-padding-right: 64px;
+
+        @include desktop {
+            padding-right: 64px;
+            padding-right: 64px;
 
         }
 
