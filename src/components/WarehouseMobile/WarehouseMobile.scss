@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-details {
+  padding: 0;
+}
+
+.warehouse-card {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $cloud;
+  padding: 1.5rem;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.warehouse-info,
+.warehouse-contact {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.warehouse-details__mobile {
+  display: flex;
+}
+
+.warehouse-actions {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.warehouse-label {
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+  color: $slate;
+}
+
+.warehouse-value {
+  height: 1.5rem;
+}
+
+/* Responsive Styles */
+@include tablet {
+  .warehouse-details {
+    &__header {
+      display: flex;
+    }
+
+    &__header-mobile {
+      display: none;
+    }
+
+    &__mobile {
+      display: none;
+    }
+
+    &__table {
+      display: table;
+    }
+  }
+}
