@@ -14,11 +14,27 @@
         width: 100%;
         display: flex;
         align-items: center;
+
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            justify-content: left;
+            margin-left: 0;
+            padding-left: 32px;
+        }
+
+        @include desktop {
+            display: flex;
+            justify-content: left;
+            margin-left: 0;
+            padding-left: 80px;
+        }
     }
 
     &__Logo {
         display: flex;
-        justify-content: center;
         width: 128.59px;
         height: 28px;
 
@@ -50,14 +66,12 @@
             font-size: 14px;
             line-height: 22px;
             margin-right: 0;
-            padding-right: 24px;
-            padding-left: 24px;
+            padding-right: 1px;
+            padding-left: 32px;
         }
 
         @include desktop {
-            padding-right: 64px;
-            padding-right: 64px;
-
+            padding-right: 80px;
         }
 
 
