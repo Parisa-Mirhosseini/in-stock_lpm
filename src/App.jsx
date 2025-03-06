@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
-// import Footer from "./components/Footer/Footer.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList";
 
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/inventories/edit/:id" element={<InventoryEdit />} />  */}
         </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
