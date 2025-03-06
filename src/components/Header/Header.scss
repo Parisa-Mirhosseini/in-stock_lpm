@@ -13,18 +13,21 @@
     @include tablet {
         width: 100%;
         display: flex;
-        align-items: baseline;
-       padding-top:24px;
-
+        align-items: center;
     }
-
 
     &__Logo {
         display: flex;
         justify-content: center;
-        @include tablet {
-            padding-top:24px;
-            padding-left:16px;
+        width: 128.59px;
+        height:28px;
+
+        @include tablet{
+           display:flex;
+           justify-content: flex-start;
+           margin-right:auto;
+           margin-left:0;
+            padding-left: 0;
         }
 
     }
@@ -35,37 +38,63 @@
         justify-content: space-around;
         font-size: 13px;
         line-height: 20px;
-        font-weight: 400;
+        font-weight: 600;
+        gap: 10px;
 
         @include tablet {
-            padding-top:24px;
+            padding-top: 0;
             font-size: 14px;
             line-height: 22px;
+            margin-right: 0;
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+        @include desktop{
+padding-right: 64px;
+padding-right: 64px;
+
         }
 
 
         &--warehouses,
         &--inventory {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-self: center;
             font-family: "Titillium Web", sans-serif;
             color: $cloud;
-
-
             z-index: 1;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-left: 16px;
+            margin-right: 16px;
 
             &:active {
                 background-color: $Black;
                 color: $white;
                 border-radius: 20px;
-                padding: 10px 50px 10px 50px;
+                padding-right: 15px;
+                padding-left: 15px;
+                justify-content: center;
+                flex-grow: 1;
+                margin-left: 16px;
+                margin-right: 16px;
+
             }
 
             &:hover {
+                flex-grow: 1;
                 background-color: $Black;
                 color: $white;
                 border-radius: 20px;
-                padding: 10px 50px 10px 50px;
                 cursor: pointer;
                 text-decoration: underline;
+                outline: 2px solid $Black;
+                justify-content: center;
+                margin-left: 16px;
+                margin-right: 16px;
             }
         }
 

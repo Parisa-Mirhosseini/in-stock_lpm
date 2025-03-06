@@ -1,5 +1,5 @@
 import "../Header/Header.scss";
-import InStockLogo1x from "../../Assets/Logo/InStock-Logo_1x.png";
+import InStockLogo2x from "../../Assets/Logo/InStock-Logo_2x.png";
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ function Header() {
         <>
             <section className="header">
                 <Link to="/" label="go to homepage">
-                    <img className="header__Logo" src={InStockLogo1x} alt="InStock Logo" />
+                    <img className="header__Logo" src={InStockLogo2x} alt="InStock Logo" />
                 </Link>
                 <div className="header__links">
                     <Link className="header__links--warehouses" style={{ textDecoration: "none" }} to="/">
