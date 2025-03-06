@@ -22,7 +22,7 @@ function App() {
         <Route path="/inventories/edit/:id" element={<InventoryEdit />} />  */}
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
