@@ -43,6 +43,12 @@
   height: 1.5rem;
 }
 
+.warehouse__table {
+  display: none;
+  @include tablet {
+  display: table;}
+}
+
 /* Responsive Styles */
 @include tablet {
   .warehouse-details {
