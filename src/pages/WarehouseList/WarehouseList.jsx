@@ -6,7 +6,7 @@ import ArrowIcon from "../../assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
+// import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
 import WarehouseMobile from "../../components/WarehouseMobile/WarehouseMobile.jsx";
 
 function WarehouseList() {
@@ -45,9 +45,9 @@ function WarehouseList() {
 
   return (
     <>
-      {isDialogOpen && (
+      {/* {isDialogOpen && (
         <DeleteWarehouse setIsDialogOpen={setIsDialogOpen} selectedWarehouse={selectedWarehouse} />
-      )}
+      )} */}
 
       <div className="warehouse-container">
         <div className="warehouse-wrapper">
