@@ -6,7 +6,7 @@ import ArrowIcon from "../../assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse.jsx";
+import Delete from "../../components/Delete/Delete.jsx";
 import WarehouseMobile from "../../components/WarehouseMobile/WarehouseMobile.jsx";
 
 function WarehouseList() {
@@ -17,7 +17,10 @@ function WarehouseList() {
   const [isAscending, setIsAscending] = useState(true);
 
   const openDeleteDialog = () => setIsDialogOpen(true);
-  const assignWarehouse = (warehouse) => setSelectedWarehouse(warehouse);
+  const assignWarehouse = (warehouse) => {
+    console.log("warehouse", warehouse);
+    setSelectedWarehouse(warehouse);
+  };
 
   const fetchWarehouses = async () => {
     try {
@@ -45,18 +48,32 @@ function WarehouseList() {
 
   return (
     <>
-      {/* {isDialogOpen && (
-        <DeleteWarehouse setIsDialogOpen={setIsDialogOpen} selectedWarehouse={selectedWarehouse} />
-      )} */}
+      {isDialogOpen && (
+        <Delete
+          setIsDialogOpen={setIsDialogOpen}
+          selectedWarehouse={selectedWarehouse}
+          warehouseData={warehouseData}
+        />
+      )}
 
       <div className="warehouse-container">
         <div className="warehouse-wrapper">
           <header className="warehouse__header">
             <h1 className="warehouse__title">Warehouses</h1>
             <div className="warehouse__controls">
-              <input type="text" className="warehouse__search" placeholder="Search..." disabled />
-              <Link to={"/warehouses/add"} className="warehouse__button-container">
-                <button className="warehouse__add-button">+ Add New Warehouse</button>
+              <input
+                type="text"
+                className="warehouse__search"
+                placeholder="Search..."
+                disabled
+              />
+              <Link
+                to={"/warehouses/add"}
+                className="warehouse__button-container"
+              >
+                <button className="warehouse__add-button">
+                  + Add New Warehouse
+                </button>
               </Link>
             </div>
           </header>
@@ -66,10 +83,18 @@ function WarehouseList() {
           <table className="warehouse__table">
             <thead>
               <tr>
-                <th onClick={() => sortWarehouseData("warehouse_name", !isAscending)}>
+                <th
+                  onClick={() =>
+                    sortWarehouseData("warehouse_name", !isAscending)
+                  }
+                >
                   Name
                   <img
-                    className={`warehouse__icon ${sortedBy === "warehouse_name" && isAscending ? "ascending" : ""}`}
+                    className={`warehouse__icon ${
+                      sortedBy === "warehouse_name" && isAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortIcon}
                     alt="Sort"
                   />
@@ -77,23 +102,41 @@ function WarehouseList() {
                 <th onClick={() => sortWarehouseData("address", !isAscending)}>
                   Location
                   <img
-                    className={`warehouse__icon ${sortedBy === "address" && isAscending ? "ascending" : ""}`}
+                    className={`warehouse__icon ${
+                      sortedBy === "address" && isAscending ? "ascending" : ""
+                    }`}
                     src={SortIcon}
                     alt="Sort"
                   />
                 </th>
-                <th onClick={() => sortWarehouseData("contact_name", !isAscending)}>
+                <th
+                  onClick={() =>
+                    sortWarehouseData("contact_name", !isAscending)
+                  }
+                >
                   Contact
                   <img
-                    className={`warehouse__icon ${sortedBy === "contact_name" && isAscending ? "ascending" : ""}`}
+                    className={`warehouse__icon ${
+                      sortedBy === "contact_name" && isAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortIcon}
                     alt="Sort"
                   />
                 </th>
-                <th onClick={() => sortWarehouseData("contact_phone", !isAscending)}>
+                <th
+                  onClick={() =>
+                    sortWarehouseData("contact_phone", !isAscending)
+                  }
+                >
                   Contact Info
                   <img
-                    className={`warehouse__icon ${sortedBy === "contact_phone" && isAscending ? "ascending" : ""}`}
+                    className={`warehouse__icon ${
+                      sortedBy === "contact_phone" && isAscending
+                        ? "ascending"
+                        : ""
+                    }`}
                     src={SortIcon}
                     alt="Sort"
                   />
@@ -106,10 +149,17 @@ function WarehouseList() {
                 <tr key={warehouse.id} className="warehouse__row">
                   <td>
                     <div className="warehouse__details">
-                      <Link className="warehouse__link" to={`/warehouses/${warehouse.id}`}>
+                      <Link
+                        className="warehouse__link"
+                        to={`/warehouses/${warehouse.id}`}
+                      >
                         {warehouse.warehouse_name}
                       </Link>
-                      <img className="warehouse__arrow" src={ArrowIcon} alt="Details" />
+                      <img
+                        className="warehouse__arrow"
+                        src={ArrowIcon}
+                        alt="Details"
+                      />
                     </div>
                   </td>
                   <td>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</td>
@@ -130,7 +180,11 @@ function WarehouseList() {
                       }}
                     />
                     <Link to={`/warehouses/edit/${warehouse.id}`}>
-                      <img className="warehouse__icon" src={EditIcon} alt="Edit" />
+                      <img
+                        className="warehouse__icon"
+                        src={EditIcon}
+                        alt="Edit"
+                      />
                     </Link>
                   </td>
                 </tr>
