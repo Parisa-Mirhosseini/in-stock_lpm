@@ -1,0 +1,34 @@
+@use "/src/styles/partials/global.scss" as *;
+@use "/src/styles/partials/mixins.scss" as *;
+@use "/src/styles/partials/typography.scss" as *;
+@use "/src/styles/partials/variables" as *;
+
+
+
+.warehouseadd {
+
+
+
+    &__container{
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+@include tablet{
+    flex-direction: row;
+}
+        }
+    
+    
+    &--pagelabel {
+        display: flex;
+        flex-direction: left;
+        // background-color: $graphite;
+    }
+
+}
+
+
+}
