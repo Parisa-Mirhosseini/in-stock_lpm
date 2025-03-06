@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventories {
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      border-bottom: none;
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__search-box {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__search {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: $white;
+    border: 1px solid $cloud;
+  }
+}
