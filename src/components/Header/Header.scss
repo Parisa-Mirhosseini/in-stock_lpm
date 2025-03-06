@@ -3,22 +3,30 @@
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 
+
+
 .header {
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
-@include tablet{
-    width: 100%;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
-    
-}
+
+    @include tablet {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+       padding-top:24px;
+
+    }
 
 
     &__Logo {
         display: flex;
         justify-content: center;
+        @include tablet {
+            padding-top:24px;
+            padding-left:16px;
+        }
+
     }
 
     &__links {
@@ -30,6 +38,7 @@
         font-weight: 400;
 
         @include tablet {
+            padding-top:24px;
             font-size: 14px;
             line-height: 22px;
         }
