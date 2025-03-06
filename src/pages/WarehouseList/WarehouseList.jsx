@@ -52,6 +52,7 @@ function WarehouseList() {
         <Delete
           setIsDialogOpen={setIsDialogOpen}
           selectedWarehouse={selectedWarehouse}
+          warehouseData={warehouseData}
         />
       )}
 

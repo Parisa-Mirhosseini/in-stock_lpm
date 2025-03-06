@@ -3,6 +3,18 @@
 @use "../../styles/partials/global" as *;
 
 .delete {
+  display: flex;
+  &__white-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: $white;
+  }
+
   &__title {
     color: $Black;
   }
@@ -17,12 +29,13 @@
   }
 
   &__cancel-btn {
-    background-color: $white;
+    background-color: $Black;
     color: $light-grey;
     border-color: $light-grey;
     height: 36px;
     border-radius: 20px;
     padding: 0 1rem;
+    border: none;
 
     &:hover {
       color: $indigo;
