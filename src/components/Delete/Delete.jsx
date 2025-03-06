@@ -1,22 +1,42 @@
 import closeIcon from "../../Assets/Icons/close-24px.svg";
+import "../Delete/Delete.scss";
+import axios from "axios";
 
-function Delete() {
-  //onclick icon for the garbage icon, to make popup appear and apply styles and template literal for message
-  // cancel button to go back to main warehouse page
-  //delete button to delete item list from db using api
-  //needs to be located within the warehouse page
+function Delete({ setIsDialogOpen, warehouseData }) {
+  function closeModal() {
+    setIsDialogOpen(false);
+  }
+
+  async function deleteWarehouse() {
+    try {
+      const deleted = await axios.delete(
+        `http://localhost:8080/api/warehouses/${warehouseData.id}`
+      );
+      setIsDialogOpen(false);
+    } catch (error) {
+      console.log("error: warehouse could not be deleted");
+    }
+  }
+
   return (
     <div className="delete">
       <div className="delete__white-box">
-        <img src="closeIcon" alt="close icon" />
-        <h1 className="delete__title">Delete ___ warehouse?</h1>
+        <img src={closeIcon} alt="close icon" onClick={closeModal} />
+        <h1 className="delete__title">
+          Delete {warehouseData.warehouse_name} warehouse?
+        </h1>
         <p className="delete__description">
-          Please confirm that you'd like to delete the ___ from the list of
-          warehouses. You won't be able to undo this action.
+          Please confirm that you'd like to delete the{" "}
+          {warehouseData.warehouse_name} from the list of warehouses. You won't
+          be able to undo this action.
         </p>
         <div className="delete__btn-box">
-          <button className="delete__cancel-btn">Cancel</button>
-          <button className="delete__delete-btn">Delete</button>
+          <button className="delete__cancel-btn" onClick={closeModal}>
+            Cancel
+          </button>
+          <button className="delete__delete-btn" onClick={deleteWarehouse}>
+            Delete
+          </button>
         </div>
       </div>
     </div>

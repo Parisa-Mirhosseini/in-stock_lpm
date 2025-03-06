@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Footer from "./components/Footer/Footer.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList";
 
-
-
 import "./App.scss";
 
 function App() {
@@ -13,7 +11,7 @@ function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="" element={<WarehouseList />} />
-        <Route path="api/warehouses" element={<WarehouseList />} />
+        <Route path="/warehouses" element={<WarehouseList />} />
         {/* <Route path="/warehouses/add" element={<WarehouseAdd />} />
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
         <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} />
@@ -22,12 +20,11 @@ function App() {
         <Route path="/inventories/add" element={<InventoryAdd />} />
         <Route path="/inventories/:id" element={<InventoryDetails />} />
         <Route path="/inventories/edit/:id" element={<InventoryEdit />} />  */}
-        </Routes>
+      </Routes>
 
-        {/* <Footer /> */}
-        </BrowserRouter>
+      {/* <Footer /> */}
+    </BrowserRouter>
   );
 }
 
 export default App;
-
