@@ -1,0 +1,47 @@
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+#root {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $light-grey;
+    color: $slate;
+    padding: 3rem 0;
+    margin-top: auto;
+
+    @include tablet {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    @include desktop {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+
+    &__copyright-text {
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 400;
+        line-height: 16px;
+        font-size: 11px;
+
+        @include tablet {
+            font-size: 12px;
+        }
+    }
+
+}
+
+div {
+    margin: 0;
+}
