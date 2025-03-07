@@ -70,12 +70,12 @@ function WarehouseAdd() {
           <div className="warehouseadd__container--pagelabel">
             <Link className="warehouseadd__container--pagelabel" to="/" label="go to homepage">
               <img className="warehouseadd__container--backarrow" src={arrowBack} alt="backarrow" />
-              <h1>Add New Warehouses</h1>
+              <h1 className="warehouseadd__container--pagelabel--text" >Add New Warehouses</h1>
             </Link>
           </div>
           <section className="warehouseadd__container__form">
             <div className="warehouseadd__container__form--wrehouse--Details">
-              <h2>Warehouse Details</h2>
+              <h2 className="warehouseadd__container__form--contact--Details--text">Warehouse Details</h2>
               <form className="warehouseadd__container__form-container" onSubmit={handleSubmit}>
                 <label>Warehouse Name</label>
                 <input
@@ -124,7 +124,7 @@ function WarehouseAdd() {
             </div>
 
             <div className="warehouseadd__container__form--contact--Details">
-              <h2>Contact Details</h2>
+              <h2 className="warehouseadd__container__form--contact--Details--text">Contact Details</h2>
 
               <form className="warehouseadd__container__form-container" onSubmit={handleSubmit}>
                 <label>Contact Name</label>

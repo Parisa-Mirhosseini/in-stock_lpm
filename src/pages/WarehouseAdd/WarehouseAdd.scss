@@ -3,38 +3,54 @@
 @use "/src/styles/partials/typography.scss" as *;
 @use "/src/styles/partials/variables" as *;
 
-* {
-    font-family: 'Titillium Web', sans-serif;
-    text-decoration: none;
-}
-
-.warehouseadd {
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-
-    &__container {
-        padding-top: 20px;
-
-        &__form {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding-top:1rem;
-
-            @include tablet {
-                flex-direction: row;
-            }
-        }
-
-
-        &--pagelabel {
-            display: flex;
-            flex-direction: left;
-            // background-color: $graphite;
-        }
-
+    * {
+        font-family: 'Titillium Web';
+        text-decoration: none;
     }
 
+    .warehouseadd {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
 
-}
+        &__container {
+            padding-top: 20px;
+
+            &--pagelabel {
+                &--text {
+                    color: $instock-black;
+                    font-family: 'Titillium Web', sans-serif;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 36px;
+                }
+            }
+
+            &__form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding-top: 1rem;
+
+                @include tablet {
+                    flex-direction: row;
+                }
+
+                &--contact--Details--text {
+                    font-size: 20px;
+                    font-family: 'Titillium Web';
+                    font-weight: 400;
+                }
+            }
+
+
+            &--pagelabel {
+                display: flex;
+                flex-direction: left;
+                // background-color: $graphite;
+            }
+
+        }
+
+
+    }
