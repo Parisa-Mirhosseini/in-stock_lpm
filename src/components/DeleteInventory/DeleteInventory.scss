@@ -1,0 +1,56 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.delete-inventory {
+  display: flex;
+  &__white-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: $white;
+  }
+
+  &__title {
+    color: $Black;
+  }
+
+  &__description {
+    color: $Black;
+  }
+
+  &__btn-box {
+    display: flex;
+    width: 100%;
+  }
+
+  &__cancel-btn {
+    background-color: $Black;
+    color: $light-grey;
+    border-color: $light-grey;
+    height: 36px;
+    border-radius: 20px;
+    padding: 0 1rem;
+    border: none;
+
+    &:hover {
+      color: $indigo;
+      border-color: $indigo;
+    }
+  }
+
+  &__delete-btn {
+    background-color: $red;
+    color: $white;
+    height: 2.25rem;
+    border-radius: 1.25rem;
+    padding: 0 1rem;
+
+    &:hover {
+      background-color: $Black;
+    }
+  }
+}

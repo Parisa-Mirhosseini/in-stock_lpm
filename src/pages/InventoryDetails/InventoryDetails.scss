@@ -1,0 +1,151 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventory-details__container{
+    display: flex;
+    justify-content: center;
+}
+.items {
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    width: 100%;
+    max-width: 1020px;
+    @include desktop {
+        margin: auto;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem;
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding: 0 0.5rem;
+        flex-grow: 1;
+    }
+
+    &__edit {
+        padding: 0.5rem;
+        background-color: $indigo;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.25rem;
+        width: 2.25rem;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__edit--hidden {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            padding: 0.5rem 1rem;
+            background-color: $indigo;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            text-decoration: none;
+            gap: 0.5rem;
+            height: 2.375rem;
+        }
+    }
+    &__text {
+        padding-top: 0.25rem;
+        padding-bottom: 1rem;
+        &--mod {
+            padding-top: 0.25rem;
+            padding-bottom: 1rem;
+            @include tablet {
+                padding-bottom: 2.25rem;
+            }
+        }
+    }
+
+    &__description-category {
+        padding: 0 0.5rem;
+        @include tablet {
+            width: 50%;
+            padding-right: 2.25rem;
+            border-right: 1px solid $cloud;
+        }
+    }
+
+    &__container {
+        border-top: 1px #BDC5D5 solid;
+        padding: 1.5rem;
+
+        @include tablet {
+            display: flex;
+            border-bottom: none;
+        }
+
+    }
+
+    &__subtitle {
+        color: $slate;
+    }
+
+    &__additional-info{
+        padding: 0 0.5rem;
+        @include tablet {
+            padding-left: 2.25rem;
+            width: 50%;
+        }
+    }
+
+    &__status-quantity {
+        display: flex;
+    }
+    &__status {
+        flex-grow: 1;
+    }
+    &__quantity{
+        flex-grow: 1;
+    }
+
+    &__stock {
+        color: $green;
+        background-color: rgba($green, 0.07);
+        display: inline-block;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.125rem 0.5rem;
+        margin-top: 0.125rem;
+        @include tablet {
+            flex-grow: 1;
+            flex-basis: 1;
+            
+        }
+    }
+
+    &__stock--not {
+        display: inline-block;
+        color: $red;
+        background: rgba($red, 0.07);
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.125rem 0.5rem;
+        margin-top: 0.125rem;
+        @include tablet {
+            flex-grow: 1;
+            flex-basis: 1;
+            
+        }
+    }
+}
