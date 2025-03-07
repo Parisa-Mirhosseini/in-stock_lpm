@@ -5,6 +5,7 @@ import InventoryList from "./pages/InventoryList/InventoryList.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails.jsx";
 import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd.jsx";
+import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx"
 import "./App.scss";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Route path="/warehouses" element={<WarehouseList />} />
         <Route path="/warehouses/add" element={<WarehouseAdd />} />
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        {/* <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} /> */}
+        <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} />
 
         <Route path="/inventories" element={<InventoryList />} />
         <Route path="/inventories/add" element={<InventoryAdd />} />
