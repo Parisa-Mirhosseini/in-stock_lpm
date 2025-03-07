@@ -16,7 +16,7 @@ function Header() {
                     <Link className="header__links--warehouses" style={{ textDecoration: "none" }} to="/">
                         Warehouses
                     </Link>
-                    <Link className="header__links--inventory" style={{ textDecoration: "none" }} to="/inventory">
+                    <Link className="header__links--inventory" style={{ textDecoration: "none" }} to="/inventories">
                         Inventory
                     </Link>
                 </div>
