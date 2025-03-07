@@ -8,7 +8,7 @@ function InventoryList() {
       <div className="inventoryList">
         <div className="inventoryList__card">
           <div className="inventoryList__inventory">
-            <header className="inventories__header">
+            <header className="inventoryList__header">
               <h1 className="inventoryList__title">Inventory</h1>
               <div className="inventoryList__search-box">
                 <input

@@ -45,10 +45,12 @@ function Inventory() {
       <section className="inventory-details__hidden">
         <h4 className="inventory-details__hidden-icon">INVENTORY ITEM</h4>
         <h4 className="inventory-details__hidden-icon">CATEGORY</h4>
-        <h4 className="inventory-details__hidden-icon--status">STATUS</h4>
+        <h4 className="inventory-details__hidden-icon inventory-details__hidden-icon--status">
+          STATUS
+        </h4>
         <h4 className="inventory-details__hidden-icon">QTY</h4>
         <h4 className="inventory-details__hidden-icon">WAREHOUSE</h4>
-        <h4 className="inventory-details__">ACTIONS</h4>
+        <h4 className="inventory-details__hidden-icon">ACTIONS</h4>
       </section>
 
       <section className="inventory-details">
@@ -104,21 +106,25 @@ function Inventory() {
           </div>
         ))}
         {inventoryDetails.map((item) => (
-          <div className="mobile" key={item.id}>
+          <div className="inventory-details__mobile-container" key={item.id}>
             <section key={item.id} className="inventory-details__mobile">
-              <div className="test-wrapper">
-                <h4 className="item_label">INVENTORY ITEM</h4>
+              <div className="inventory-details__test-wrapper">
+                <h4 className="inventory-details__item_label">
+                  INVENTORY ITEM
+                </h4>
                 <NavLink to={`/inventories/${item.id}`}>
-                  <h3 className="inventory-details__click-item ">
+                  <h3 className="inventory-details__click-item">
                     {item.item_name}
                     <img src={ArrowIcon} alt="arrow icon" />
                   </h3>
                 </NavLink>
-                <h4 className="item_label">CATEGORY</h4>
-                <p className="item_value ">{item.category}</p>
+                <h4 className="inventory-details__item_label">CATEGORY</h4>
+                <p className="inventory-details__item_value ">
+                  {item.category}
+                </p>
               </div>
-              <div className="another-wrapper">
-                <h4 className="item_label">STATUS</h4>
+              <div className="inventory-details__another-wrapper">
+                <h4 className="inventory-details__item_label">STATUS</h4>
                 <div className="column">
                   <h3
                     className={`inventory-details__status ${
@@ -128,13 +134,17 @@ function Inventory() {
                     {item.status}
                   </h3>
                 </div>
-                <h4 className="item_label">QTY</h4>
-                <p className="item_value ">{item.quantity}</p>
-                <h4 className="item_label">WAREHOUSE</h4>
-                <p className="item_value">{item.warehouse_name}</p>
+                <h4 className="inventory-details__item_label">QTY</h4>
+                <p className="inventory-details__item_value ">
+                  {item.quantity}
+                </p>
+                <h4 className="inventory-details__item_label">WAREHOUSE</h4>
+                <p className="inventory-details__item_value">
+                  {item.warehouse_name}
+                </p>
               </div>
             </section>
-            <section className="icons-wrapper">
+            <section className="inventory-details__icons-wrapper">
               <div
                 className="inventory-details__delete"
                 onClick={() => {
