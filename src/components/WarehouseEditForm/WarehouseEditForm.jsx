@@ -11,14 +11,15 @@ function WarehouseEditForm() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    warehouseName: "",
-    streetAddress: "",
+    warehouse_name: "",
+    address: "",
     city: "",
     country: "",
-    contactName: "",
-    position: "",
-    phoneNumber: "",
-    email: "",
+    contact_name: "",
+    contact_position: "",
+    contact_phone: "",
+    contact_name: "",
+    contact_email: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -27,7 +28,7 @@ function WarehouseEditForm() {
   useEffect(() => {
     const fetchWarehouse = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/warehouses/${id}`);
+        const response = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
         setFormData(response.data); // Pre-fill the form with existing data
       } catch (error) {
         console.error("Error fetching warehouse data:", error);
@@ -107,9 +108,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="text"
-                  name="warehouseName"
+                  name="warehouse_name"
                   placeholder="Warehouse Name"
-                  value={formData.warehouseName}
+                  value={formData.warehouse_name}
                   onChange={handleChange}
                 />
                 {errors.warehouseName && <p className="error">{errors.warehouseName}</p>}
@@ -118,9 +119,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="text"
-                  name="streetAddress"
+                  name="address"
                   placeholder="Street Address"
-                  value={formData.streetAddress}
+                  value={formData.address}
                   onChange={handleChange}
                 />
                 {errors.streetAddress && <p className="error">{errors.streetAddress}</p>}
@@ -155,9 +156,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="text"
-                  name="contactName"
+                  name="contact_name"
                   placeholder="Contact Name"
-                  value={formData.contactName}
+                  value={formData.contact_name}
                   onChange={handleChange}
                 />
                 {errors.contactName && <p className="error">{errors.contactName}</p>}
@@ -166,9 +167,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="text"
-                  name="position"
+                  name="contact_position"
                   placeholder="Position"
-                  value={formData.position}
+                  value={formData.contact_position}
                   onChange={handleChange}
                 />
                 {errors.position && <p className="error">{errors.position}</p>}
@@ -177,9 +178,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="text"
-                  name="phoneNumber"
+                  name="contact_phone"
                   placeholder="Phone Number"
-                  value={formData.phoneNumber}
+                  value={formData.contact_phone}
                   onChange={handleChange}
                 />
                 {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
@@ -188,9 +189,9 @@ function WarehouseEditForm() {
                 <input
                   className="warehouseedit__container__form--input"
                   type="email"
-                  name="email"
+                  name="contact_email"
                   placeholder="Email"
-                  value={formData.email}
+                  value={formData.contact_email}
                   onChange={handleChange}
                 />
                 {errors.email && <p className="error">{errors.email}</p>}
