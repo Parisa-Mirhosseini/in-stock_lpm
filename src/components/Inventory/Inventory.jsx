@@ -6,6 +6,7 @@ import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../Assets/Icons/sort-24px.svg";
+import DeleteInventory from "../DeleteInventory/DeleteInventory.jsx";
 // import DeleteInventory from "../DeleteInventory/DeleteInventory";
 
 function Inventory() {
@@ -34,9 +35,13 @@ function Inventory() {
 
   return (
     <>
-      {/* {isDialogOpen && (
-      <DeleteInventory setIsDialogOpen={setIsDialogOpen} inventoryInfo={inventoryInfo} />
-    )} */}
+      {isDialogOpen && (
+        <DeleteInventory
+          setIsDialogOpen={setIsDialogOpen}
+          inventoryDetails={inventoryDetails}
+          inventoryInfo={inventoryInfo}
+        />
+      )}
       <section className="inventory-details__hidden">
         <h4 className="inventory-details__hidden-icon">INVENTORY ITEM</h4>
         <h4 className="inventory-details__hidden-icon">CATEGORY</h4>
@@ -50,7 +55,7 @@ function Inventory() {
         {inventoryDetails.map((item) => (
           <div className="tablet" key={item.id}>
             <section key={item.id} className="inventory-details__container-i">
-              <h4 className="inventory-details__items">INVENTORY ITEM</h4>
+              <h4 className="inventory-details__items">INVENTORY ITEM</h4>{" "}
               <NavLink to={`/inventories/${item.id}`} className="column">
                 <h3 className="inventory-details__click-item ">
                   {item.item_name}
@@ -79,7 +84,6 @@ function Inventory() {
               <p className="inventory-details__quantity-value column">
                 {item.warehouse_name}
               </p>
-
               <section className="inventory-details__icons-box">
                 <div
                   className="inventory-details__delete"
