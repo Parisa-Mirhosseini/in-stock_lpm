@@ -10,7 +10,7 @@ function WarehouseEditForm() {
   const { id } = useParams(); // Get the warehouse ID from the URL
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+  const initialData = {
     warehouse_name: "",
     address: "",
     city: "",
@@ -20,7 +20,9 @@ function WarehouseEditForm() {
     contact_phone: "",
     contact_name: "",
     contact_email: ""
-  });
+  }
+
+  const [formData, setFormData] = useState(initialData);
 
   const [errors, setErrors] = useState({});
 
@@ -71,17 +73,19 @@ function WarehouseEditForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
 
-      console.log(formData);
+
 
       try {
         const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
         console.log("Data updated successfully:", response.data);
         alert("Warehouse updated successfully!");
+        setFormData({ initialData })
         navigate("/"); // Redirect to homepage after successful update
       } catch (error) {
         console.error("Error updating data:", error.response?.data);
@@ -91,24 +95,24 @@ function WarehouseEditForm() {
   };
 
 
-
+  //cancel button
   const handleCancel = () => {
-    navigate("/");
+    navigate("/"); //goes to home page
   };
-  
-  const handleSave = async () => {
-    if (validateForm()) {
-      try {
-        const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
-        console.log("Data updated successfully:", response.data);
-        alert("Warehouse updated successfully!");
-        navigate("/warehouses"); // Navigate to the warehouse list page after saving
-      } catch (error) {
-        console.error("Error updating data:", error.response?.data);
-        setErrors({ ...errors, backend: "Failed to update data. Please try again." });
-      }
-    }
-  };
+
+  // const handleSave = async () => {
+  //   if (validateForm()) {
+  //     try {
+  //       const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
+  //       console.log("Data updated successfully:", response.data);
+  //       alert("Warehouse updated successfully!");
+  //       navigate("/warehouses"); // Navigate to the warehouse list page after saving
+  //     } catch (error) {
+  //       console.error("Error updating data:", error.response?.data);
+  //       setErrors({ ...errors, backend: "Failed to update data. Please try again." });
+  //     }
+  //   }
+  // };
 
 
   return (
@@ -224,7 +228,7 @@ function WarehouseEditForm() {
                 <button className="warehouseedit__buttons--cancel" type="button" onClick={handleCancel}>
                   Cancel
                 </button>
-                <button className="warehouseedit__buttons--save" type="submit" onClick={handleSubmit}>
+                <button className="warehouseedit__buttons--save" type="submit">
                   Save
                 </button>
               </section>
