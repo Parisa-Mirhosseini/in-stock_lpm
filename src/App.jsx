@@ -3,6 +3,7 @@ import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import InventoryList from "./pages/InventoryList/InventoryList.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList";
+import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails.jsx";
 
 import "./App.scss";
 
@@ -13,9 +14,9 @@ function App() {
       <Routes>
         <Route path="" element={<WarehouseList />} />
         <Route path="/warehouses" element={<WarehouseList />} />
-        {/*<Route path="/warehouses/add" element={<WarehouseAdd />} />
+        {/* <Route path="/warehouses/add" element={<WarehouseAdd />} /> */}
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} /> */}
+        {/* <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} /> */}
 
         <Route path="/inventories" element={<InventoryList />} />
         <Route path="/inventories/add" element={<InventoryAdd />} />

@@ -1,0 +1,169 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.warehouse-details {
+
+    background-color: $white;
+    border-radius: 4px;
+    font-family: "Titillium Web", sans-serif;
+    
+
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem;
+        align-items: center;
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+    }
+
+    &__city {
+        padding: 0 0.5rem;
+        flex-grow: 1;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    &__edit {
+        padding: 0.5rem;
+        background-color: $indigo;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.25rem; //36px
+        width: 2.5rem;
+
+        @include tablet {
+            display: none;
+            
+        }
+    }
+
+    &__edit--hidden {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            background-color: $indigo;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            text-decoration: none;
+            gap: 0.625rem; //10px
+            width: 5.063rem; //81px
+            height: 2.375; //38px
+            padding: 0.5rem 1rem;
+        }
+    }
+
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        gap: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            margin-top: 0;
+            flex-grow: 1;
+            justify-content: space-around;
+            border-left: 1px $cloud solid;
+
+        }
+
+    }
+
+    &__container {
+        border-top: 1px #BDC5D5 solid;
+        padding: 1.5rem;
+
+        @include tablet {
+            display: flex;
+            border-bottom: none;
+        }
+
+    }
+
+    &__address {
+        @include desktop {
+            padding-right: 10rem;
+        }
+    }
+
+    &__address-info {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        @include tablet {
+            width: 60%;
+            margin-left: 0;
+        }
+    }
+
+
+    &__subtitle {
+        color: $slate;
+        font-weight: 600;
+        font-size: 11px;
+
+        @include tablet {
+            font-size: 12px;
+        }
+
+    }
+
+    &__first-last-name {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+
+    &__job-title {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__number {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &__email {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+
+        @include tablet {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}
