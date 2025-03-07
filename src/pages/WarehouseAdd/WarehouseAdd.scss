@@ -3,32 +3,38 @@
 @use "/src/styles/partials/typography.scss" as *;
 @use "/src/styles/partials/variables" as *;
 
-
+* {
+    font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+}
 
 .warehouseadd {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
 
+    &__container {
+        padding-top: 20px;
 
-
-    &__container{
-
-        &__form{
+        &__form {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            padding-top:1rem;
 
-@include tablet{
-    flex-direction: row;
-}
+            @include tablet {
+                flex-direction: row;
+            }
         }
-    
-    
-    &--pagelabel {
-        display: flex;
-        flex-direction: left;
-        // background-color: $graphite;
-    }
 
-}
+
+        &--pagelabel {
+            display: flex;
+            flex-direction: left;
+            // background-color: $graphite;
+        }
+
+    }
 
 
 }
