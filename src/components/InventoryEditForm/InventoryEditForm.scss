@@ -1,0 +1,144 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+// Form container
+.form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__form-wrap {
+    gap: 1rem;
+    width: 100%;
+    flex: 1;
+  }
+
+  &__form-box {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: $Black;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 32px;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    background-color: $white;
+    margin-bottom: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $indigo;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__text,
+  &__dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    background-color: $white;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__box {
+    list-style: none;
+    display: flex;
+  }
+
+  &__btn-frame {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  &__btn-cancel {
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    background-color: $white;
+    color: $slate;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    height: 2.25rem;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid $indigo;
+      color: $indigo;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__btn-active {
+    padding: 0.5rem;
+    border: none;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    border-radius: 20px;
+    background-color: $indigo;
+    color: $white;
+    font-weight: 600;
+    cursor: pointer;
+    height: 2.25rem;
+    width: 100%;
+
+    &:hover {
+      background-color: $Black;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+}

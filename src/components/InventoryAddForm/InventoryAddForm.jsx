@@ -101,7 +101,7 @@ function InventoryAdd() {
   }, []);
 
   return (
-    <form onSubmit={handleFormSubmit} className="Form">
+    <form onSubmit={handleFormSubmit} className="form">
       <div className="form__form-wrap">
         <div className="form__form-box">
           <h2 className="form__title">Item Details</h2>
