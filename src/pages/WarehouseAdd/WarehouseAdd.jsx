@@ -5,6 +5,18 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 
 
+// function validateForm() {
+//     const warehouseName = document.getElementById('warehouse-name').value;
+//     const phoneNumber = document.getElementById('phone-number').value;
+//     const email = document.getElementById('email').value;
+
+//     if (!warehouseName) {
+//         showError('warehouse-name', 'Warehouse Name is required.');
+//         return false;
+//       }
+
+// }
+
 function WarehouseAdd() {
     return (
         <>
