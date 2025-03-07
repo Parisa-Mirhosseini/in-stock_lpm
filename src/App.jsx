@@ -5,11 +5,8 @@ import InventoryList from "./pages/InventoryList/InventoryList.jsx";
 import WarehouseList from "./pages/WarehouseList/WarehouseList";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails.jsx";
 import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd.jsx";
-<<<<<<< HEAD
-import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx"
-=======
 import InventoryDetails from "./pages/InventoryDetails/InventoryDetails.jsx";
->>>>>>> develop
+import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx"
 import "./App.scss";
 
 function App() {
