@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function WarehouseDetailsComponent() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ function WarehouseDetailsComponent() {
   // Get warehouse details from the API based on id
   async function getWarehouseDetails() {
     try {
-      const response = await axios.get(`http://localhost:8080/api/warehouses/${id}`);
+      const response = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
       setWarehouseDetails(response.data);
     } catch (error) {
       console.log(error);

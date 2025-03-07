@@ -7,6 +7,8 @@ import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../Assets/Icons/sort-24px.svg";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function Warehouse() {
   const [warehouseDetails, setWarehouseDetails] = useState([]);
   const [warehouseInfo, setWarehouseInfo] = useState({});
@@ -21,7 +23,7 @@ function Warehouse() {
 
   const getWarehouses = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/warehouses");
+      const response = await axios.get(`${BASE_URL}/api/warehouses`);
       setWarehouseDetails(response.data);
     } catch (error) {
       console.error("Error fetching warehouse data", error);
