@@ -28,8 +28,9 @@ function WarehouseEditForm() {
   useEffect(() => {
     const fetchWarehouse = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
-        setFormData(response.data); // Pre-fill the form with existing data
+        const {data} = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
+        delete data.id;
+        setFormData(data); // Pre-fill the form with existing data
       } catch (error) {
         console.error("Error fetching warehouse data:", error);
         alert("Failed to load warehouse data. Please try again later.");
@@ -55,14 +56,14 @@ function WarehouseEditForm() {
     }
 
     // Validate email format
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    if (!/\S+@\S+\.\S+/.test(formData.contact_email)) {
       newErrors.email = "Invalid email address.";
     }
 
     // Validate phone number format
-    if (!/^\d{10}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = "Invalid phone number (10 digits required).";
-    }
+    // if (!/^+\d{11}$/.test(formData.contact_phone)) {
+    //   newErrors.phoneNumber = "Invalid phone number.";
+    // }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -74,7 +75,7 @@ function WarehouseEditForm() {
     if (validateForm()) {
       try {
         // Send updated data to back-end
-        const response = await axios.put(`${BASE_URL}/warehouses/${id}`, formData);
+        const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
         console.log("Data updated successfully:", response.data);
         alert("Warehouse updated successfully!");
         navigate("/"); // Redirect to homepage after successful update
