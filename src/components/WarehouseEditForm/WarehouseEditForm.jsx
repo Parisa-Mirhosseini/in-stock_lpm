@@ -28,7 +28,7 @@ function WarehouseEditForm() {
   useEffect(() => {
     const fetchWarehouse = async () => {
       try {
-        const {data} = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
+        const { data } = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
         delete data.id;
         setFormData(data); // Pre-fill the form with existing data
       } catch (error) {
@@ -44,6 +44,8 @@ function WarehouseEditForm() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+
 
   const validateForm = () => {
     const newErrors = {};
@@ -73,8 +75,10 @@ function WarehouseEditForm() {
     e.preventDefault();
 
     if (validateForm()) {
+
+      console.log(formData);
+
       try {
-        // Send updated data to back-end
         const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
         console.log("Data updated successfully:", response.data);
         alert("Warehouse updated successfully!");
@@ -86,9 +90,26 @@ function WarehouseEditForm() {
     }
   };
 
+
+
   const handleCancel = () => {
-    navigate("/"); // Navigate back to the homepage
+    navigate("/");
   };
+  
+  const handleSave = async () => {
+    if (validateForm()) {
+      try {
+        const response = await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
+        console.log("Data updated successfully:", response.data);
+        alert("Warehouse updated successfully!");
+        navigate("/warehouses"); // Navigate to the warehouse list page after saving
+      } catch (error) {
+        console.error("Error updating data:", error.response?.data);
+        setErrors({ ...errors, backend: "Failed to update data. Please try again." });
+      }
+    }
+  };
+
 
   return (
     <>
@@ -203,8 +224,8 @@ function WarehouseEditForm() {
                 <button className="warehouseedit__buttons--cancel" type="button" onClick={handleCancel}>
                   Cancel
                 </button>
-                <button className="warehouseedit__buttons--save" type="submit">
-                  Save Changes
+                <button className="warehouseedit__buttons--save" type="submit" onClick={handleSubmit}>
+                  Save
                 </button>
               </section>
             </form>
