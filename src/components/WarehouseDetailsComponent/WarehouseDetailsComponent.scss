@@ -24,6 +24,7 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 36px;
+    letter-spacing: 0%;
   }
 
   &__edit {
@@ -86,6 +87,10 @@
   }
 
   &__address {
+
+    @include tablet {
+      margin-right: 4rem;
+    }
     @include desktop {
       padding-right: 10rem;
     }
@@ -98,16 +103,21 @@
     @include tablet {
       width: 60%;
       margin-left: 0;
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 
   &__subtitle {
     color: $slate;
     font-weight: 600;
+    line-height: 16px;
     font-size: 11px;
 
     @include tablet {
       font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0%;
     }
   }
 
