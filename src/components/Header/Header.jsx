@@ -8,9 +8,9 @@ function Header() {
         <>
             <section className="header">
                 <div className="header__container">
-                <Link to="/" label="go to homepage">
-                    <img className="header__Logo" src={InStockLogo2x} alt="InStock Logo" />
-                </Link>
+                    <Link to="/" label="go to homepage">
+                        <img className="header__Logo" src={InStockLogo2x} alt="InStock Logo" />
+                    </Link>
                 </div>
                 <div className="header__links">
                     <Link className="header__links--warehouses" style={{ textDecoration: "none" }} to="/">

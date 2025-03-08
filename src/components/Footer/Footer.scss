@@ -3,12 +3,6 @@
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 
-#root {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 .footer {
     flex-shrink: 0;
