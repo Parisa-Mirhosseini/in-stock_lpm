@@ -88,15 +88,6 @@ function WarehouseEditForm() {
   const handleCancel = () => navigate("/warehouses"); 
 
   return (
-    <section className="warehouseedit">
-      <div className="warehouseedit__container">
-        <div className="warehouseedit__container--pagelabel">
-          <Link to="/warehouses">
-            <img className="warehouseedit__container--backarrow" src={arrowBack} alt="backarrow" />
-            <h1>Edit Warehouse</h1>
-          </Link>
-        </div>
-
         <section className="warehouseedit__container__form">
           <form onSubmit={handleSubmit} className="warehouseedit__container__form-container">
             {/* Warehouse Details */}
@@ -148,8 +139,6 @@ function WarehouseEditForm() {
             </section>
           </form>
         </section>
-      </div>
-    </section>
   );
 }
 
