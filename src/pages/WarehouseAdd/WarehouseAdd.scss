@@ -12,6 +12,13 @@
     background-color: $white;
     box-shadow: 2px 2px 1px $cloud;
     border-radius: 4px;
+    position: relative;
+    top: -5.5rem;
+
+    @include tablet {
+      position: relative;
+      top: -5.5rem;
+    }
   }
 
   &__wrap {

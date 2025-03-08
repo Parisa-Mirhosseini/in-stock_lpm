@@ -78,14 +78,14 @@ function WarehouseEditForm() {
       await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
       console.log("Warehouse updated successfully!");
       alert("Warehouse updated successfully!");
-      navigate("/warehouses"); // ✅ Redirect to warehouses page
+      navigate("/warehouses"); 
     } catch (error) {
       console.error("Error updating data:", error);
       setErrors({ ...errors, backend: "Failed to update data." });
     }
   };
 
-  const handleCancel = () => navigate("/warehouses"); // ✅ Go back to warehouses page
+  const handleCancel = () => navigate("/warehouses"); 
 
   return (
     <section className="warehouseedit">

@@ -2,8 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 // Form container
-.form {
-    padding: 1rem;
+.addwarehouse__form {
+    padding: 1.2rem;
     display: flex;
 
     &__form-wrap {
@@ -11,19 +11,21 @@
         flex-direction: column;
         gap: 1rem;
         width: 100%;
-        
-     @include tablet{
-                display: flex;
-                flex:inline-block;
-            }
+
+        @include tablet {
+            display: flex;
+            // flex:inline-block;
+            flex-direction: row;
+        }
 
     }
 
     &__form-box {
         width: 100%;
 
-        
     }
+
+
 
     &__title {
         font-size: 1.25rem;
@@ -94,7 +96,9 @@
     &__box {
         list-style: none;
         display: flex;
+
     }
+
 
     &__btn-frame {
         display: flex;
