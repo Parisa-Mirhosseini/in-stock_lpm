@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Titillium Web", sans-serif;
+  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web", sans-serif;
+  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Titillium Web";
+  margin: 0 auto;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Titillium Web";
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header {
+  background-color: #232940;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  height: 200px;
+}
+@media (min-width: 768px) {
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: self-start;
+    height: 186px;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding-right: auto;
+    padding-left: auto;
+  }
+}
+.header .header__logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header .header__logo-wrapper {
+    justify-content: left;
+    padding-left: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .header .header__logo-wrapper {
+    justify-content: left;
+    padding-left: auto;
+  }
+}
+.header__container {
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .header__container {
+    display: flex;
+    justify-content: left;
+    margin-left: 0;
+    padding-left: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .header__container {
+    display: flex;
+    justify-content: left;
+    margin-left: 0;
+    padding-left: 80px;
+  }
+}
+.header__container--Logo {
+  display: flex;
+  width: 128.59px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header__container--Logo {
+    justify-content: left;
+    margin: 0;
+    padding-left: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .header__container--Logo {
+    justify-content: left;
+    margin: 0;
+    padding-left: 0;
+  }
+}
+.header__links {
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .header__links {
+    padding-top: 0;
+    font-size: 14px;
+    line-height: 22px;
+    margin-right: 0;
+    padding-right: 1px;
+    padding-left: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .header__links {
+    padding-right: auto;
+  }
+}
+.header__links--warehouses, .header__links--inventory {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: center;
+  font-family: "Titillium Web", sans-serif;
+  color: #bdc5d5;
+  z-index: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.header__links--warehouses:active, .header__links--inventory:active {
+  background-color: #13182c;
+  color: #ffffff;
+  border-radius: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
+  justify-content: center;
+  flex: 1;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.header__links--warehouses:hover, .header__links--inventory:hover {
+  flex: 1;
+  background-color: #13182c;
+  color: #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  text-underline-offset: 4px;
+  outline: 2px solid #13182c;
+  justify-content: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}/*# sourceMappingURL=Header.css.map */

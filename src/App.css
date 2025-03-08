@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Titillium Web", sans-serif;
+  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web", sans-serif;
+  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}/*# sourceMappingURL=App.css.map */

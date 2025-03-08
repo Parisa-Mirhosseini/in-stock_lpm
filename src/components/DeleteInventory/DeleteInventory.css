@@ -1,0 +1,46 @@
+.delete-inventory {
+  display: flex;
+}
+.delete-inventory__white-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #ffffff;
+}
+.delete-inventory__title {
+  color: #13182c;
+}
+.delete-inventory__description {
+  color: #13182c;
+}
+.delete-inventory__btn-box {
+  display: flex;
+  width: 100%;
+}
+.delete-inventory__cancel-btn {
+  background-color: #13182c;
+  color: #f7f8f9;
+  border-color: #f7f8f9;
+  height: 36px;
+  border-radius: 20px;
+  padding: 0 1rem;
+  border: none;
+}
+.delete-inventory__cancel-btn:hover {
+  color: #2e66e5;
+  border-color: #2e66e5;
+}
+.delete-inventory__delete-btn {
+  background-color: #c94515;
+  color: #ffffff;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  padding: 0 1rem;
+}
+.delete-inventory__delete-btn:hover {
+  background-color: #13182c;
+}/*# sourceMappingURL=DeleteInventory.css.map */
