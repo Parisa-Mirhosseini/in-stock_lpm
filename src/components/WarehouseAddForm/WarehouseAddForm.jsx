@@ -125,7 +125,7 @@ function WarehouseAddForm() {
 
                 {/* Contact Details */}
                 <div className="form">
-                    <div className="form__form-box">
+                <div className="form__box">
                         <h2 className="form__title">Contact Details</h2>
                         <label className="form__label">Contact Name</label>
                         <input
@@ -171,8 +171,7 @@ function WarehouseAddForm() {
                         />
                         {errors.email && <p className="error">{errors.email}</p>}
                     </div>
-                </div>
-
+    
                 {/* Buttons */}
                 <section className="form__btn-frame">
                     <button className="form__btn-cancel" type="button" onClick={handleCancel}>
@@ -182,6 +181,7 @@ function WarehouseAddForm() {
                         + Add Warehouse
                     </button>
                 </section>
+                </div>
             </form>
         </>
     );
