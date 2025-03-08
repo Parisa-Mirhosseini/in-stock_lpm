@@ -1,6 +1,6 @@
 
 import "../WarehouseInventoryItems/WarehouseInventoryItems.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
