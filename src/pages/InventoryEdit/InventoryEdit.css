@@ -1,0 +1,35 @@
+.form-page {
+  padding: 1rem;
+  background-color: #f7f8f9;
+}
+.form-page__container {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 1px #bdc5d5;
+  border-radius: 4px;
+}
+.form-page__wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #5c667e;
+}
+.form-page__icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.form-page__item {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  color: #13182c;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .form-page__item {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}/*# sourceMappingURL=InventoryEdit.css.map */
