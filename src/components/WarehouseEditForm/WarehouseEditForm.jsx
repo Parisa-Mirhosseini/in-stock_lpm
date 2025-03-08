@@ -27,7 +27,7 @@ function WarehouseEditForm() {
     const fetchWarehouse = async () => {
       try {
         const { data } = await axios.get(`${BASE_URL}/api/warehouses/${id}`);
-        const {id, created_at, updated_at, ...rest} = data;
+        const { id: _id, created_at, updated_at, ...rest } = data;
         setFormData(rest); // Pre-fill form
       } catch (error) {
         console.error("Error fetching warehouse data:", error);
