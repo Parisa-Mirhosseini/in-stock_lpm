@@ -16,8 +16,9 @@ function InventoryDetails() {
 
   async function getInventoryDetails() {
     try {
-      const response = await axios.get(`${BASE_URL}/api/inventories/${params.id}`);
-      console.log(response);
+      const response = await axios.get(
+        `${BASE_URL}/api/inventories/${params.id}`
+      );
       setInventoryDetails(response.data);
     } catch (error) {
       console.log(
@@ -30,8 +31,6 @@ function InventoryDetails() {
   useEffect(() => {
     getInventoryDetails();
   }, [params.id]);
-
-  console.log("this is inventory item", InventoryDetails);
 
   return (
     <>
