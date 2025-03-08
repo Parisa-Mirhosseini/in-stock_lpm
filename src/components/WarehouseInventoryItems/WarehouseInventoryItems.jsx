@@ -1,12 +1,11 @@
 
 import "../WarehouseInventoryItems/WarehouseInventoryItems.scss";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
-import SortIcon from "../../Assets/Icons/sort-24px.svg";
 import DeleteInventory from "../DeleteInventory/DeleteInventory.jsx";
 
 
