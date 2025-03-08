@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2.25rem; //36px
+    height: 2.25rem;
     width: 2.5rem;
 
     @include tablet {
@@ -54,9 +54,9 @@
       justify-content: center;
       color: $white;
       text-decoration: none;
-      gap: 0.625rem; //10px
-      width: 5.063rem; //81px
-      height: 2.375; //38px
+      gap: 0.625rem;
+      width: 5.063rem;
+      height: 2.375;
       padding: 0.5rem 1rem;
     }
   }
@@ -87,7 +87,6 @@
   }
 
   &__address {
-
     @include tablet {
       margin-right: 4rem;
     }

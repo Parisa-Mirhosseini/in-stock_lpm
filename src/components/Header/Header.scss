@@ -9,11 +9,13 @@
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
+    height: 200px;
 
     @include tablet {
         width: 100%;
         display: flex;
         align-items: center;
+        height: 186px;
 
     }
 
