@@ -57,7 +57,7 @@ function WarehouseAddForm() {
         }
 
         try {
-            const response = await axios.post(`${BASE_URL}/warehouses`, formData);
+            const response = await axios.post(`${BASE_URL}/api/warehouses`, formData);
             console.log("Data saved successfully:", response.data);
             navigate("/");
         } catch (error) {
@@ -77,56 +77,56 @@ function WarehouseAddForm() {
                 <div className="form__form-wrap">
                     <div className="form__form-box">
                         <div className="form__box--each">
-                        <h2 className="form__title">Warehouse Details</h2>
-                        <label className="form__label">Warehouse Name</label>
-                        <input
-                            className="form__input"
-                            type="text"
-                            name="warehouseName"
-                            placeholder="Warehouse Name"
-                            value={formData.warehouseName}
-                            onChange={handleChange}
-                        />
-                        {errors.warehouseName && <p className="error">{errors.warehouseName}</p>}
+                            <h2 className="form__title">Warehouse Details</h2>
+                            <label className="form__label">Warehouse Name</label>
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="warehouseName"
+                                placeholder="Warehouse Name"
+                                value={formData.warehouseName}
+                                onChange={handleChange}
+                            />
+                            {errors.warehouseName && <p className="error">{errors.warehouseName}</p>}
 
-                        <label className="form__label">Street Address</label>
-                        <input
-                            className="form__input"
-                            type="text"
-                            name="streetAddress"
-                            placeholder="Street Address"
-                            value={formData.streetAddress}
-                            onChange={handleChange}
-                        />
-                        {errors.streetAddress && <p className="error">{errors.streetAddress}</p>}
+                            <label className="form__label">Street Address</label>
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="streetAddress"
+                                placeholder="Street Address"
+                                value={formData.streetAddress}
+                                onChange={handleChange}
+                            />
+                            {errors.streetAddress && <p className="error">{errors.streetAddress}</p>}
 
-                        <label className="form__label">City</label>
-                        <input
-                            className="form__input"
-                            type="text"
-                            name="city"
-                            placeholder="City"
-                            value={formData.city}
-                            onChange={handleChange}
-                        />
-                        {errors.city && <p className="error">{errors.city}</p>}
+                            <label className="form__label">City</label>
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="city"
+                                placeholder="City"
+                                value={formData.city}
+                                onChange={handleChange}
+                            />
+                            {errors.city && <p className="error">{errors.city}</p>}
 
-                        <label className="form__label">Country</label>
-                        <input
-                            className="form__input"
-                            type="text"
-                            name="country"
-                            placeholder="Country"
-                            value={formData.country}
-                            onChange={handleChange}
-                        />
-                        {errors.country && <p className="error">{errors.country}</p>}
-                    </div>
+                            <label className="form__label">Country</label>
+                            <input
+                                className="form__input"
+                                type="text"
+                                name="country"
+                                placeholder="Country"
+                                value={formData.country}
+                                onChange={handleChange}
+                            />
+                            {errors.country && <p className="error">{errors.country}</p>}
+                        </div>
                     </div>
 
                     <div className="form__box--each">
-                    {/* Contact Details */}
-                    
+                        {/* Contact Details */}
+
                         <h2 className="form__title">Contact Details</h2>
                         <label className="form__label">Contact Name</label>
                         <input
