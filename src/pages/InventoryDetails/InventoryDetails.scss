@@ -1,182 +1,186 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.inventory-details__container{
-    display: flex;
-    justify-content: center;
-    font-family: "Titillium Web", sans-serif;
+.inventory-details__container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  max-width: 1020px;
+  position: relative;
+  margin: 0 1.5rem;
+  top: -3.7rem;
+  font-family: "Titillium Web", sans-serif;
+
+  @include tablet {
+    top: -5.47rem;
+  }
 }
 
 .items {
-    border-radius: 4px;
-    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
-    background-color: $white;
-    width: 100%;
-    max-width: 1020px;
-    @include desktop {
-        margin: auto;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  width: 100%;
+  max-width: 1020px;
+  @include desktop {
+    margin: auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 0 0.5rem;
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0%;
+  }
+
+  &__edit {
+    padding: 0.5rem;
+    background-color: $indigo;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.25rem;
+    width: 2.25rem;
+
+    @include tablet {
+      display: none;
     }
+  }
 
-    &__header {
-        display: flex;
-        flex-direction: row;
-        padding: 1.5rem;
+  &__edit--hidden {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      padding: 0.5rem 1rem;
+      background-color: $indigo;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      text-decoration: none;
+      gap: 0.5rem;
+      height: 2.375rem;
     }
+  }
+  &__text {
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
 
-    &__arrow {
-        display: flex;
-        align-items: center;
+    &--mod {
+      padding-top: 0.25rem;
+      padding-bottom: 1rem;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+      @include tablet {
+        padding-bottom: 2.25rem;
+      }
     }
+  }
 
-    &__item {
-        padding: 0 0.5rem;
-        flex-grow: 1;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 36px;
-        letter-spacing: 0%;
+  &__description-category {
+    padding: 0 0.5rem;
+    @include tablet {
+      width: 50%;
+      padding-right: 2.25rem;
+      border-right: 1px solid $cloud;
     }
+  }
 
-    &__edit {
-        padding: 0.5rem;
-        background-color: $indigo;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.25rem;
-        width: 2.25rem;
+  &__container {
+    border-top: 1px #bdc5d5 solid;
+    padding: 1.5rem;
 
-        @include tablet {
-            display: none;
-        }
+    @include tablet {
+      display: flex;
+      border-bottom: none;
     }
+  }
 
-    &__edit--hidden {
-        display: none;
+  &__subtitle {
+    color: $slate;
+    font-weight: 600;
+    line-height: 16px;
+    font-size: 11px;
 
-        @include tablet {
-            display: flex;
-            padding: 0.5rem 1rem;
-            background-color: $indigo;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: $white;
-            text-decoration: none;
-            gap: 0.5rem;
-            height: 2.375rem;
-        }
+    @include tablet {
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0%;
     }
-    &__text {
-        padding-top: 0.25rem;
-        padding-bottom: 1rem;
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 20px;
+  }
 
-     
-    
-        &--mod {
-            padding-top: 0.25rem;
-            padding-bottom: 1rem;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 20px;
-            @include tablet {
-                padding-bottom: 2.25rem;
-            }
-        }
+  &__additional-info {
+    padding: 0 0.5rem;
+    @include tablet {
+      padding-left: 2.25rem;
+      width: 50%;
     }
+  }
 
-    &__description-category {
-        padding: 0 0.5rem;
-        @include tablet {
-            width: 50%;
-            padding-right: 2.25rem;
-            border-right: 1px solid $cloud;
-        }
+  &__status-quantity {
+    display: flex;
+  }
+  &__status {
+    flex-grow: 1;
+  }
+  &__quantity {
+    flex-grow: 1;
+  }
+
+  &__stock {
+    color: $green;
+    background-color: rgba($green, 0.07);
+    display: inline-block;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.125rem 0.5rem;
+    margin-top: 0.125rem;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    @include tablet {
+      flex-grow: 1;
+      flex-basis: 1;
     }
+  }
 
-    &__container {
-        border-top: 1px #BDC5D5 solid;
-        padding: 1.5rem;
-
-        @include tablet {
-            display: flex;
-            border-bottom: none;
-        }
-
+  &__stock--not {
+    display: inline-block;
+    color: $red;
+    background: rgba($red, 0.07);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.125rem 0.5rem;
+    margin-top: 0.125rem;
+    @include tablet {
+      flex-grow: 1;
+      flex-basis: 1;
     }
-
-    &__subtitle {
-        color: $slate;
-        font-weight: 600;
-        line-height: 16px;
-        font-size: 11px;
-
-        @include tablet {
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: 0%;
-        }
-    }
-
-    &__additional-info{
-        padding: 0 0.5rem;
-        @include tablet {
-            padding-left: 2.25rem;
-            width: 50%;
-        }
-    }
-
-    &__status-quantity {
-        display: flex;
-    }
-    &__status {
-        flex-grow: 1;
-    }
-    &__quantity{
-        flex-grow: 1;
-    }
-
-    &__stock {
-        color: $green;
-        background-color: rgba($green, 0.07);
-        display: inline-block;
-        border-radius: 20px;
-        align-items: center;
-        justify-content: center;
-        padding: 0.125rem 0.5rem;
-        margin-top: 0.125rem;
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 20px;
-        @include tablet {
-            flex-grow: 1;
-            flex-basis: 1;
-            
-        }
-    }
-
-    &__stock--not {
-        display: inline-block;
-        color: $red;
-        background: rgba($red, 0.07);
-        border-radius: 20px;
-        align-items: center;
-        justify-content: center;
-        padding: 0.125rem 0.5rem;
-        margin-top: 0.125rem;
-        @include tablet {
-            flex-grow: 1;
-            flex-basis: 1;
-            
-        }
-    }
+  }
 }
 
 .items__icon--white {
-    filter: brightness(0) invert(1);
-  }
+  filter: brightness(0) invert(1);
+}

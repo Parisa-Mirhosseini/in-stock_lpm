@@ -15,15 +15,21 @@
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
+
+
     height: 136px;
+
 
     @include tablet {
         width: 100%;
         display: flex;
         align-items: center;
+
+
         justify-content: space-between;
         height: 92px;
     }
+
 
     @include desktop {
         height: 92px;
