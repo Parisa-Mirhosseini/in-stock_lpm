@@ -15,24 +15,20 @@
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
-
-
-    height: 136px;
+    height: 200px;
 
 
     @include tablet {
         width: 100%;
         display: flex;
-        align-items: center;
-
-
+        align-items: self-start;
+        height: 186px;
         justify-content: space-between;
-        height: 92px;
+
     }
-
-
-    @include desktop {
-        height: 92px;
+    @include desktop{
+        padding-right:auto ;
+        padding-left:auto ;
     }
 
     .header__logo-wrapper {
