@@ -4,6 +4,9 @@
 .warehouse-details {
   padding: 0;
   font-family: "Titillium Web";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &__container-i {
     justify-content: space-between;
@@ -93,3 +96,6 @@
   color: $slate;
 }
 
+.warehouse-details__edit-mobile {
+filter: brightness(0) invert(1);
+}

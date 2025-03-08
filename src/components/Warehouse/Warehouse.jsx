@@ -51,7 +51,6 @@ function Warehouse() {
               <h4 className="warehouse-details__items">WAREHOUSE</h4>
               <NavLink to={`/warehouses/${warehouse.id}`} className="column">
                 <h3 className="warehouse-details__click-item">
-                  {/* {warehouse.name} */}
                   {warehouse.warehouse_name}
                   <img src={ArrowIcon} alt="arrow icon" />
                 </h3>
@@ -66,7 +65,6 @@ function Warehouse() {
               </p>
               <h4 className="warehouse-details__items">CONTACT INFO</h4>
               <p className="warehouse-details__click-item-value-i column">
-                {/* {warehouse.contact_info} */}
                 {warehouse.contact_phone} <br />
                 {warehouse.contact_email}
               </p>
@@ -82,9 +80,7 @@ function Warehouse() {
                   <img src={TrashIcon} alt="delete icon" />
                 </div>
                 <Link to={`/warehouses/edit/${warehouse.id}`}>
-                  <p className="warehouse-details__edit">
                     <img src={EditIcon} alt="edit icon" />
-                  </p>
                 </Link>
               </section>
             </section>
@@ -124,7 +120,7 @@ function Warehouse() {
               </div>
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <p className="warehouse-details__edit">
-                  <img src={EditIcon} alt="edit icon" />
+                  <img src={EditIcon} alt="edit icon" className="warehouse-details__edit-mobile"/>
                 </p>
               </Link>
             </section>
