@@ -78,25 +78,16 @@ function WarehouseEditForm() {
       await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
       console.log("Warehouse updated successfully!");
       alert("Warehouse updated successfully!");
-      navigate("/warehouses"); // ✅ Redirect to warehouses page
+      navigate("/warehouses"); 
     } catch (error) {
       console.error("Error updating data:", error);
       setErrors({ ...errors, backend: "Failed to update data." });
     }
   };
 
-  const handleCancel = () => navigate("/warehouses"); // ✅ Go back to warehouses page
+  const handleCancel = () => navigate("/warehouses"); 
 
   return (
-    <section className="warehouseedit">
-      <div className="warehouseedit__container">
-        <div className="warehouseedit__container--pagelabel">
-          <Link to="/warehouses">
-            <img className="warehouseedit__container--backarrow" src={arrowBack} alt="backarrow" />
-            <h1>Edit Warehouse</h1>
-          </Link>
-        </div>
-
         <section className="warehouseedit__container__form">
           <form onSubmit={handleSubmit} className="warehouseedit__container__form-container">
             {/* Warehouse Details */}
@@ -148,8 +139,6 @@ function WarehouseEditForm() {
             </section>
           </form>
         </section>
-      </div>
-    </section>
   );
 }
 
