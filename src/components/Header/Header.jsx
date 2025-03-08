@@ -1,24 +1,24 @@
 import "../Header/Header.scss";
 import InStockLogo2x from "../../Assets/Logo/InStock-Logo_2x.png";
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
     return (
         <>
             <section className="header">
-                <div className="header__container">
-                <Link to="/" label="go to homepage">
-                    <img className="header__Logo" src={InStockLogo2x} alt="InStock Logo" />
-                </Link>
+                <div className="header__logo-wrapper">
+                    <NavLink to="/" className="header__container--home" >
+                        <img href="/"  className="header__container--Logo" src={InStockLogo2x} alt="InStock Logo" />
+                    </NavLink>
                 </div>
                 <div className="header__links">
-                    <Link className="header__links--warehouses" style={{ textDecoration: "none" }} to="/">
+                    <NavLink className="header__links--warehouses" style={{ textDecoration: "none" }} to="/">
                         Warehouses
-                    </Link>
-                    <Link className="header__links--inventory" style={{ textDecoration: "none" }} to="/inventories">
+                    </NavLink>
+                    <NavLink className="header__links--inventory" style={{ textDecoration: "none" }} to="/inventories">
                         Inventory
-                    </Link>
+                    </NavLink>
                 </div>
             </section>
         </>

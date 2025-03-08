@@ -1,0 +1,127 @@
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+    text-decoration: none;
+
+
+}
+
+.warehouseedit {
+    width: 100%;
+    padding: 0 16px;
+    border: 1px solid rgba($Black, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+
+    &__container {
+        padding-top: 20px;
+
+        &--pagelabel {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            &--text {
+                color: $Black;
+                font-family: 'Titillium Web', sans-serif;
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            &--backarrow {
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+            }
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 1rem;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            &--warehouse--Details,
+            &--contact--Details {
+                flex: 1;
+                margin-bottom: 20px;
+
+                &--text {
+                    font-size: 20px;
+                    font-family: 'Titillium Web', sans-serif;
+                    font-weight: 400;
+                    margin-bottom: 16px;
+                }
+            }
+
+            &--input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 12px;
+                border: 1px solid $cloud;
+                border-radius: 4px;
+                font-family: 'Titillium Web', sans-serif;
+
+                &:focus {
+                    outline: none;
+                    border-color: $indigo;
+                }
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 16px;
+            margin-top: 20px;
+            background-color: $light-grey;
+
+            &--cancel,
+            &--add {
+                padding: 8px 16px;
+                border: none;
+                border-radius: 4px;
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                color: $white;
+            }
+
+            &--cancel {
+                background-color: $white;
+                border: 1px solid $cloud;
+                color: $slate;
+
+                &:hover {
+                    background-color: $cloud;
+                }
+            }
+
+            &--add {
+                background-color: $indigo;
+                color: $white;
+
+                &:hover {
+                    background-color: ($indigo, 10%);
+                }
+            }
+        }
+    }
+}
+
+.error {
+    color: $red;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 12px;
+}

@@ -3,23 +3,59 @@
 @use "../../styles/partials/typography.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 
+* {
+    box-sizing: border-box;
+    font-family: "Titillium Web";
+    margin: 0 auto;
+    padding: 0;
+}
 
 
 .header {
     background-color: $graphite;
     padding-top: 24px;
     padding-bottom: 24px;
-    height: 200px;
+
+
+    height: 136px;
+
 
     @include tablet {
         width: 100%;
         display: flex;
         align-items: center;
-        height: 186px;
 
+
+        justify-content: space-between;
+        height: 92px;
+    }
+
+
+    @include desktop {
+        height: 92px;
+    }
+
+    .header__logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @include tablet {
+            justify-content: left;
+            padding-left: 32px;
+        }
+
+        @include desktop {
+            justify-content: left;
+            padding-left: auto;
+        }
     }
 
     &__container {
+
+        justify-content: center;
+
         @include tablet {
             display: flex;
             justify-content: left;
@@ -33,31 +69,35 @@
             margin-left: 0;
             padding-left: 80px;
         }
-    }
 
-    &__Logo {
-        display: flex;
-        width: 128.59px;
-        height: 28px;
+        &--Logo {
+            display: flex;
+            width: 128.59px;
+            height: 28px;
+            justify-content: center;
+            align-items: center;
 
-        @include tablet {
-            justify-content: left;
-            margin: 0;
-            padding-left: 0;
+            @include tablet {
+                justify-content: left;
+                margin: 0;
+                padding-left: 0;
+            }
+
+            @include desktop {
+                justify-content: left;
+                margin: 0;
+                padding-left: 0;
+            }
+
         }
 
-        @include desktop {
-            justify-content: left;
-            margin: 0;
-            padding-left: 0;
-        }
-
     }
+
 
     &__links {
         padding-top: 24px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         font-size: 13px;
         line-height: 20px;
         font-weight: 600;
@@ -69,18 +109,19 @@
             line-height: 22px;
             margin-right: 0;
             padding-right: 1px;
-            padding-left: 32px;
+            padding-left: 16px;
+
         }
 
         @include desktop {
-            padding-right: 80px;
+            padding-right: auto;
         }
 
 
         &--warehouses,
         &--inventory {
-            flex-grow: 1;
             display: flex;
+            flex: 1;
             justify-content: center;
             align-self: center;
             font-family: "Titillium Web", sans-serif;
@@ -99,19 +140,21 @@
                 padding-right: 15px;
                 padding-left: 15px;
                 justify-content: center;
-                flex-grow: 1;
+                flex: 1;
                 margin-left: 16px;
                 margin-right: 16px;
 
             }
 
             &:hover {
-                flex-grow: 1;
+                flex: 1;
                 background-color: $Black;
                 color: $white;
                 border-radius: 20px;
                 cursor: pointer;
                 text-decoration: underline;
+                text-decoration-color: $white;
+                text-underline-offset: 4px;
                 outline: 2px solid $Black;
                 justify-content: center;
                 margin-left: 16px;
