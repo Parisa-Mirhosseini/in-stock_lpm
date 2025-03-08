@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../../components/WarehouseEditForm/WarehouseEditForm.scss";
-import arrowBack from "../../Assets/Icons/arrow_back-24px.svg";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -78,68 +78,79 @@ function WarehouseEditForm() {
       await axios.put(`${BASE_URL}/api/warehouses/${id}`, formData);
       console.log("Warehouse updated successfully!");
       alert("Warehouse updated successfully!");
-      navigate("/warehouses"); 
+      navigate("/warehouses");
     } catch (error) {
       console.error("Error updating data:", error);
       setErrors({ ...errors, backend: "Failed to update data." });
     }
   };
 
-  const handleCancel = () => navigate("/warehouses"); 
+  const handleCancel = () => navigate("/warehouses");
+
+
 
   return (
-        <section className="warehouseedit__container__form">
-          <form onSubmit={handleSubmit} className="warehouseedit__container__form-container">
-            {/* Warehouse Details */}
-            <div className="warehouseedit__container__form--warehouse--details">
-              <h2>Warehouse Details</h2>
-              {["warehouse_name", "address", "city", "country"].map((field) => (
-                <div key={field}>
-                  <label>{field.replace("_", " ")}</label>
-                  <input
-                    className="warehouseedit__container__form--input"
-                    type="text"
-                    name={field}
-                    placeholder={field.replace("_", " ")}
-                    value={formData[field] || ""}
-                    onChange={handleChange}
-                  />
-                  {errors[field] && <p className="error">{errors[field]}</p>}
-                </div>
-              ))}
+    <section className="warehouseedit__form">
+      <form onSubmit={handleSubmit} className="warehouseedit__form__form-wrap">
+        {/* Warehouse Details */}
+        <div className="warehouseedit__form__box--each">
+          <h2 className="warehouseedit__form__title">Warehouse Details</h2>
+          {["warehouse_name", "address", "city", "country"].map((field) => (
+            <div key={field}>
+              <label className="warehouseedit__form__label" htmlFor={field}>
+                {field.replace("_", " ")}
+              </label>
+              <input
+                className="warehouseedit__form__input"
+                type="text"
+                id={field}
+                name={field}
+                placeholder={field.replace("_", " ")}
+                value={formData[field] || ""}
+                onChange={handleChange}
+              />
+              {errors[field] && <p className="error">{errors[field]}</p>}
             </div>
+          ))}
+        </div>
 
-            {/* Contact Details */}
-            <div className="warehouseedit__container__form--contact--details">
-              <h2>Contact Details</h2>
-              {["contact_name", "contact_position", "contact_phone", "contact_email"].map((field) => (
-                <div key={field}>
-                  <label>{field.replace("_", " ")}</label>
-                  <input
-                    className="warehouseedit__container__form--input"
-                    type={field === "contact_email" ? "email" : "text"}
-                    name={field}
-                    placeholder={field.replace("_", " ")}
-                    value={formData[field] || ""}
-                    onChange={handleChange}
-                  />
-                  {errors[field] && <p className="error">{errors[field]}</p>}
-                </div>
-              ))}
+        {/* Contact Details */}
+        <div className="warehouseedit__form__box--each">
+          <h2 className="warehouseedit__form__title">Contact Details</h2>
+          {["contact_name", "contact_position", "contact_phone", "contact_email"].map((field) => (
+            <div key={field}>
+              <label className="warehouseedit__form__label" htmlFor={field}>
+                {field.replace("_", " ")}
+              </label>
+              <input
+                className="warehouseedit__form__input"
+                type={field === "contact_email" ? "email" : "text"}
+                id={field}
+                name={field}
+                placeholder={field.replace("_", " ")}
+                value={formData[field] || ""}
+                onChange={handleChange}
+              />
+              {errors[field] && <p className="error">{errors[field]}</p>}
             </div>
+          ))}
+        </div>
 
-            {/* Buttons */}
-            <section className="warehouseedit__buttons">
-              <button type="button" onClick={handleCancel} className="warehouseedit__buttons--cancel">
-                Cancel
-              </button>
-              <button type="submit" className="warehouseedit__buttons--save">
-                Save
-              </button>
-            </section>
-          </form>
+        {/* Buttons */}
+        <section className="warehouseedit__form__btn-frame">
+          <button
+            type="button"
+            onClick={handleCancel}
+            className="warehouseedit__form__btn-cancel"
+          >
+            Cancel
+          </button>
+          <button type="submit" className="warehouseedit__form__btn-active">
+            Save
+          </button>
         </section>
+      </form>
+    </section>
   );
 }
-
 export default WarehouseEditForm;

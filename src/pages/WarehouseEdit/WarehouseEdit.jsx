@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../WarehouseEdit/WarehouseEdit.scss";
 import WarehouseEditForm from "../../components/WarehouseEditForm/WarehouseEditForm";
+import arrowBack from "../../Assets/Icons/arrow_back-24px.svg";
+import { Link } from "react-router-dom";
+
 
 function WarehouseEdit() {
   return (
