@@ -13,8 +13,8 @@ function WarehouseEdit() {
           <div className="form-page__wrap">
             <Link to="/warehouses">
               <img className="form-page__icon" src={arrowBack} alt="backarrow" />
-              <h1 className="form-page__item">Edit Warehouse</h1>
             </Link>
+            <h1 className="form-page__item">Edit Warehouse</h1>
           </div>
           <WarehouseEditForm />
         </div>
