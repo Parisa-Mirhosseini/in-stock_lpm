@@ -12,12 +12,13 @@ function WarehouseAdd() {
           <div className="form-page__wrap">
             <Link to="/" label="go to homepage">
               <img className="form-page__icon" src={arrowBack} alt="backarrow" />
-              <h1 className="form-page__item">Add New Warehouse</h1>
             </Link>
+            <h1 className="form-page__item">Add New Warehouse</h1>
           </div>
+          <WarehouseAddForm />
+
         </div>
       </section>
-      <WarehouseAddForm />
     </>
   );
 }

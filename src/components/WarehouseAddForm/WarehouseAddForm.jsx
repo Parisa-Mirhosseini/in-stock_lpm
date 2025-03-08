@@ -76,6 +76,7 @@ function WarehouseAddForm() {
                 {/* Warehouse Details */}
                 <div className="form__form-wrap">
                     <div className="form__form-box">
+                        <div className="form__box--each">
                         <h2 className="form__title">Warehouse Details</h2>
                         <label className="form__label">Warehouse Name</label>
                         <input
@@ -121,11 +122,11 @@ function WarehouseAddForm() {
                         />
                         {errors.country && <p className="error">{errors.country}</p>}
                     </div>
-                </div>
+                    </div>
 
-                {/* Contact Details */}
-                <div className="form">
-                <div className="form__box">
+                    <div className="form__box--each">
+                    {/* Contact Details */}
+                    
                         <h2 className="form__title">Contact Details</h2>
                         <label className="form__label">Contact Name</label>
                         <input
@@ -171,16 +172,15 @@ function WarehouseAddForm() {
                         />
                         {errors.email && <p className="error">{errors.email}</p>}
                     </div>
-    
-                {/* Buttons */}
-                <section className="form__btn-frame">
-                    <button className="form__btn-cancel" type="button" onClick={handleCancel}>
-                        Cancel
-                    </button>
-                    <button className="form__btn-active" type="submit">
-                        + Add Warehouse
-                    </button>
-                </section>
+                    {/* Buttons */}
+                    <section className="form__btn-frame">
+                        <button className="form__btn-cancel" type="button" onClick={handleCancel}>
+                            Cancel
+                        </button>
+                        <button className="form__btn-active" type="submit">
+                            + Add Warehouse
+                        </button>
+                    </section>
                 </div>
             </form>
         </>
