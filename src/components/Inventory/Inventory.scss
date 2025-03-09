@@ -133,11 +133,7 @@
     }
 
     @include desktop {
-      flex-wrap: nowrap;
-      align-items: center;
       padding: 1rem 4rem 1rem 4rem;
-      justify-content: center;
-
     }
   }
 
