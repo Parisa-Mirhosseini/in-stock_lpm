@@ -1,9 +1,8 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// Form container
 .form {
-  padding: 1rem;
+  padding: 0 1rem;
 
   &__form-wrap {
     display: flex;
@@ -24,12 +23,22 @@
 
     @include tablet {
       font-size: 1.5rem;
-      line-height: 32px;
+      line-height: 2rem;
+    }
+  }
+
+  &__fields-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
     }
   }
 
   &__label {
-    display: block;
     font-size: 0.8125rem;
     line-height: 1.25rem;
     color: $Black;

@@ -1,6 +1,5 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/global" as *;
 
 .inventory-details {
   &__hidden {
@@ -10,9 +9,9 @@
       display: flex;
       justify-content: space-between;
       padding: 0 1.5rem;
+      font-size: 0.8125rem;
+      line-height: 20px;
       background-color: $light-grey;
-      border-top: 1px solid $cloud;
-      border-bottom: 1px solid $cloud;
     }
   }
 
@@ -20,15 +19,25 @@
     display: flex;
     align-items: center;
     padding: 1rem 0;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
     color: $slate;
     font-weight: 600;
-    font-size: 0.75rem;
     flex: 1;
+    justify-content: flex-end;
 
-    img {
-      margin-left: 0.5rem;
-      cursor: pointer;
+    &:first-child {
+      justify-content: flex-start;
     }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
   }
 
   &__mobile-container {
@@ -58,7 +67,7 @@
     color: $slate;
     font-weight: 600;
     font-size: 0.75rem;
-    margin-bottom: 0.25rem;
+    padding: 0.5rem 0;
   }
 
   &__item_value {
@@ -73,10 +82,19 @@
     color: $indigo;
     font-weight: 600;
     font-size: 0.875rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
 
     img {
       margin-left: 0.5rem;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   &__status {
@@ -86,6 +104,11 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     width: fit-content;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
 
     &.in-stock {
       background-color: rgba(21, 132, 99, 0.07);
@@ -114,16 +137,24 @@
     flex-wrap: wrap;
     padding: 1rem;
     border-bottom: 1px solid $cloud;
-
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
     @include tablet {
+      display: flex;
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: space-between;
       padding: 1rem 1.5rem;
+      font-size: 1rem;
+      line-height: 1.75rem;
+
+      &:hover {
+        background-color: rgba(46, 102, 229, 0.1);
+      }
     }
   }
 
   &__items {
-    width: 50%;
     color: $slate;
     font-weight: 600;
     font-size: 0.75rem;
@@ -134,39 +165,21 @@
     }
   }
 
-  &__click-item-value,
-  &__quantity-value,
   &__warehouse {
-    width: 50%;
-
     @include tablet {
-      flex: 1;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      justify-content: flex-end;
+      text-align: left;
     }
   }
 
   &__link-box {
-    width: 50%;
     text-decoration: none;
-
-    @include tablet {
-      flex: 1.2;
-    }
-  }
-
-  &__quantity-value,
-  &__icons-box {
-    @include tablet {
-      flex: 0.7;
-    }
   }
 
   &__icons-box {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     margin-top: 1rem;
 
     @include tablet {
