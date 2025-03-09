@@ -90,32 +90,34 @@ function WarehouseEditForm() {
 
 
   return (
-    <section className="warehouseedit__form">
-      <form onSubmit={handleSubmit} className="warehouseedit__form__form-wrap">
-        {/* Warehouse Details */}
-        <div className="warehouseedit__form__box--each">
-          <h2 className="warehouseedit__form__title">Warehouse Details</h2>
-          {["warehouse_name", "address", "city", "country"].map((field) => (
-            <div key={field}>
-              <label className="warehouseedit__form__label" htmlFor={field}>
-                {field.replace("_", " ")}
-              </label>
-              <input
-                className="warehouseedit__form__input"
-                type="text"
-                id={field}
-                name={field}
-                placeholder={field.replace("_", " ")}
-                value={formData[field] || ""}
-                onChange={handleChange}
-              />
-              {errors[field] && <p className="error">{errors[field]}</p>}
-            </div>
-          ))}
+    <form onSubmit={handleSubmit} className="warehouseedit__form">
+      {/* Warehouse Details */}
+      <div className="warehouseedit__form__form-wrap">
+        <div className="warehouseedit__form__form-box">
+          <div className="warehouseedit__form__box--each">
+            <h2 className="warehouseedit__form__title">Warehouse Details</h2>
+            {["warehouse_name", "address", "city", "country"].map((field) => (
+              <div key={field}>
+                <label className="warehouseedit__form__label" htmlFor={field}>
+                  {field.replace("_", " ")}
+                </label>
+                <input
+                  className="warehouseedit__form__input"
+                  type="text"
+                  id={field}
+                  name={field}
+                  placeholder={field.replace("_", " ")}
+                  value={formData[field] || ""}
+                  onChange={handleChange}
+                />
+                {errors[field] && <p className="error">{errors[field]}</p>}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Contact Details */}
-        <div className="warehouseedit__form__box--each">
+        <div className="warehouseedit__form__box">
           <h2 className="warehouseedit__form__title">Contact Details</h2>
           {["contact_name", "contact_position", "contact_phone", "contact_email"].map((field) => (
             <div key={field}>
@@ -135,6 +137,7 @@ function WarehouseEditForm() {
             </div>
           ))}
         </div>
+        </div>
 
         {/* Buttons */}
         <section className="warehouseedit__form__btn-frame">
@@ -149,8 +152,7 @@ function WarehouseEditForm() {
             Save
           </button>
         </section>
-      </form>
-    </section>
+    </form>
   );
 }
 export default WarehouseEditForm;
