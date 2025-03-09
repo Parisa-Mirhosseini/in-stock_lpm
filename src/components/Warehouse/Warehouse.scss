@@ -43,7 +43,7 @@
   }
 
   &__mobile-container {
-    border-bottom: 1px solid $cloud;
+    border-top: 1px solid $cloud;
 
     @include tablet {
       display: none;
@@ -158,6 +158,14 @@
       justify-content: flex-end;
       gap: 1rem;
     }
+  }
+
+  &__edit {
+    background-color: none;
+  }
+
+  &__edit-white {
+    // filter: brightness(0) invert(1);
   }
 }
 
