@@ -81,7 +81,7 @@ function Warehouse() {
               </NavLink>
               <h4 className="warehouse-details__items">ADDRESS</h4>
               <p className="warehouse-details__click-item-value">
-                {warehouse.address}
+              {warehouse.address}, {warehouse.city}, {warehouse.country}
               </p>
               <h4 className="warehouse-details__items">CONTACT NAME</h4>
               <p className="warehouse-details__click-item-value">
@@ -125,7 +125,7 @@ function Warehouse() {
                 </NavLink>
                 <h4 className="warehouse-details__item_label">ADDRESS</h4>
                 <p className="warehouse-details__item_value">
-                  {warehouse.address}
+                  {warehouse.address}, {warehouse.city}, {warehouse.country}
                 </p>
               </div>
               <div className="warehouse-details__another-wrapper">
@@ -151,9 +151,13 @@ function Warehouse() {
                 <img src={TrashIcon} alt="trash icon" />
               </div>
               <Link to={`/warehouses/edit/${warehouse.id}`}>
-                <p className="warehouse-details__edit">
-                  <img src={EditIcon} alt="edit icon" />
-                </p>
+                {/* <p className="warehouse-details__edit"> */}
+                <img
+                  src={EditIcon}
+                  alt="edit icon"
+                  className="warehouse-details__edit-white"
+                />
+                {/* </p> */}
               </Link>
             </section>
           </div>

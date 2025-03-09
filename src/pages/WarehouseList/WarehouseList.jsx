@@ -9,20 +9,25 @@ function WarehouseList() {
       <div className="warehouseList">
         <div className="warehouseList__card">
           <div className="warehouseList__warehouse">
-            <header className="warehouses__header">
+            <header className="warehouseList__header">
+              {" "}
+              {/* Fixed Class Name */}
               <h1 className="warehouseList__title">Warehouses</h1>
               <div className="warehouseList__search-box">
-                <input
-                  type="text"
-                  className="warehouseList__search"
-                  placeholder="Search..."
-                  disabled
-                ></input>
-                <img
-                  className="warehouseList__icon"
-                  src={searchIcon}
-                  alt="search icon"
-                />
+                {/* Search Container */}
+                <div className="warehouseList__search-container">
+                  <input
+                    type="text"
+                    className="warehouseList__search"
+                    placeholder="Search..."
+                    disabled
+                  />
+                  <img
+                    className="warehouseList__search-icon" // Fixed Class Name
+                    src={searchIcon}
+                    alt="search icon"
+                  />
+                </div>
                 <Link
                   to={"/warehouses/add"}
                   className="warehouseList__container-add-btn"
