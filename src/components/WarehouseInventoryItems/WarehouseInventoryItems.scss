@@ -20,8 +20,15 @@
   }
 
   &__container-i {
-    padding: 1.5rem 0;
+    padding: 1.5rem;
     border-bottom: 1px solid $cloud;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include tablet {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
 
     &:hover {
       @include desktop {
@@ -76,6 +83,7 @@
 
   &__tablet {
     display: none;
+
     @include tablet {
       display: contents;
     }
@@ -124,6 +132,7 @@
       display: none;
     }
   }
+
   &__status {
     text-transform: uppercase;
     font-weight: 400;

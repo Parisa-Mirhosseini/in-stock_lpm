@@ -47,7 +47,6 @@ function WarehouseInventoryItems() {
                 <h4 className="inventory-details__hidden-icon">CATEGORY</h4>
                 <h4 className="inventory-details__hidden-icon--status">STATUS</h4>
                 <h4 className="inventory-details__hidden-icon">QTY</h4>
-                <h4 className="inventory-details__hidden-icon">WAREHOUSE</h4>
                 <h4 className="inventory-details__">ACTIONS</h4>
             </section>
 
@@ -79,10 +78,7 @@ function WarehouseInventoryItems() {
                             <p className="inventory-details__quantity-value column">
                                 {item.quantity}
                             </p>
-                            <h4 className="inventory-details__items">WAREHOUSE</h4>
-                            <p className="inventory-details__quantity-value column">
-                                {item.warehouse_name}
-                            </p>
+
                             <section className="inventory-details__icons-box">
                                 <div
                                     className="inventory-details__delete"
@@ -128,8 +124,7 @@ function WarehouseInventoryItems() {
                                 </div>
                                 <h4 className="item_label">QTY</h4>
                                 <p className="item_value ">{item.quantity}</p>
-                                <h4 className="item_label">WAREHOUSE</h4>
-                                <p className="item_value">{item.warehouse_name}</p>
+
                             </div>
                         </section>
                         <section className="icons-wrapper">
