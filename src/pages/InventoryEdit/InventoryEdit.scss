@@ -1,10 +1,13 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// Parent container for the form
 .form-page {
   padding: 1rem;
   background-color: $light-grey;
+
+  @include tablet {
+    padding: 1.5rem;
+  }
 
   &__container {
     max-width: 90%;
@@ -20,6 +23,7 @@
     gap: 1rem;
     padding: 1rem 0;
     border-bottom: 1px solid $slate;
+    background-color: $white;
   }
 
   &__icon {

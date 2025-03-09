@@ -6,6 +6,7 @@ import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../Assets/Icons/sort-24px.svg";
+import Delete from "../Delete/Delete.jsx";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -29,46 +30,68 @@ function Warehouse() {
       console.error("Error fetching warehouse data", error);
     }
   };
-  
+
   useEffect(() => {
     getWarehouses();
   }, [isDialogOpen]);
 
   return (
     <>
+      {isDialogOpen && (
+        <Delete
+          setIsDialogOpen={setIsDialogOpen}
+          warehouseDetails={warehouseDetails}
+          warehouseInfo={warehouseInfo}
+        />
+      )}
       <section className="warehouse-details__hidden">
-        <h4 className="warehouse-details__hidden-icon">WAREHOUSE</h4>
-        <h4 className="warehouse-details__hidden-icon">ADDRESS</h4>
-        <h4 className="warehouse-details__hidden-icon">CONTACT NAME</h4>
-        <h4 className="warehouse-details__hidden-icon">CONTACT INFO</h4>
-        <h4 className="warehouse-details__hidden-icon">ACTIONS</h4>
+        <h4 className="warehouse-details__hidden-icon">
+          WAREHOUSE <img src={SortIcon} alt="sort icon" />
+        </h4>
+        <h4 className="warehouse-details__hidden-icon">
+          ADDRESS <img src={SortIcon} alt="sort icon" />
+        </h4>
+        <h4 className="warehouse-details__hidden-icon">
+          CONTACT NAME <img src={SortIcon} alt="sort icon" />
+        </h4>
+        <h4 className="warehouse-details__hidden-icon">
+          CONTACT INFO <img src={SortIcon} alt="sort icon" />
+        </h4>
+        <h4 className="warehouse-details__hidden-icon">
+          ACTIONS <img src={SortIcon} alt="sort icon" />
+        </h4>
       </section>
 
       <section className="warehouse-details">
         {warehouseDetails.map((warehouse) => (
           <div className="tablet" key={warehouse.id}>
-            <section key={warehouse.id} className="warehouse-details__container-i">
+            <section
+              key={warehouse.id}
+              className="warehouse-details__container-i"
+            >
               <h4 className="warehouse-details__items">WAREHOUSE</h4>
-              <NavLink to={`/warehouses/${warehouse.id}`} className="column">
+              <NavLink
+                to={`/warehouses/${warehouse.id}`}
+                className="warehouse-details__link-box"
+              >
                 <h3 className="warehouse-details__click-item">
                   {warehouse.warehouse_name}
                   <img src={ArrowIcon} alt="arrow icon" />
                 </h3>
               </NavLink>
               <h4 className="warehouse-details__items">ADDRESS</h4>
-              <p className="warehouse-details__click-item-value-i column">
+              <p className="warehouse-details__click-item-value">
                 {warehouse.address}
               </p>
               <h4 className="warehouse-details__items">CONTACT NAME</h4>
-              <p className="warehouse-details__click-item-value-i column">
+              <p className="warehouse-details__click-item-value">
                 {warehouse.contact_name}
               </p>
               <h4 className="warehouse-details__items">CONTACT INFO</h4>
-              <p className="warehouse-details__click-item-value-i column">
+              <p className="warehouse-details__click-item-value">
                 {warehouse.contact_phone} <br />
                 {warehouse.contact_email}
               </p>
-
               <section className="warehouse-details__icons-box">
                 <div
                   className="warehouse-details__delete"
@@ -80,35 +103,44 @@ function Warehouse() {
                   <img src={TrashIcon} alt="delete icon" />
                 </div>
                 <Link to={`/warehouses/edit/${warehouse.id}`}>
-                    <img src={EditIcon} alt="edit icon" />
+                  <img src={EditIcon} alt="edit icon" />
                 </Link>
               </section>
             </section>
           </div>
         ))}
         {warehouseDetails.map((warehouse) => (
-          <div className="mobile" key={warehouse.id}>
+          <div
+            className="warehouse-details__mobile-container"
+            key={warehouse.id}
+          >
             <section key={warehouse.id} className="warehouse-details__mobile">
-              <div className="test-wrapper">
-                <h4 className="item_label">WAREHOUSE</h4>
+              <div className="warehouse-details__test-wrapper">
+                <h4 className="warehouse-details__item_label">WAREHOUSE</h4>
                 <NavLink to={`/warehouses/${warehouse.id}`}>
                   <h3 className="warehouse-details__click-item">
-                  {warehouse.warehouse_name}
+                    {warehouse.warehouse_name}
                     <img src={ArrowIcon} alt="arrow icon" />
                   </h3>
                 </NavLink>
-                <h4 className="item_label">ADDRESS</h4>
-                <p className="item_value">{warehouse.address}</p>
+                <h4 className="warehouse-details__item_label">ADDRESS</h4>
+                <p className="warehouse-details__item_value">
+                  {warehouse.address}
+                </p>
               </div>
-              <div className="another-wrapper">
-                <h4 className="item_label">CONTACT NAME</h4>
-                <p className="item_value">{warehouse.contact_name}</p>
-                <h4 className="item_label">CONTACT INFO</h4>
-                <p className="item_value"> {warehouse.contact_phone} <br />
-                {warehouse.contact_email}</p>
+              <div className="warehouse-details__another-wrapper">
+                <h4 className="warehouse-details__item_label">CONTACT NAME</h4>
+                <p className="warehouse-details__item_value">
+                  {warehouse.contact_name}
+                </p>
+                <h4 className="warehouse-details__item_label">CONTACT INFO</h4>
+                <p className="warehouse-details__item_value">
+                  {warehouse.contact_phone} <br />
+                  {warehouse.contact_email}
+                </p>
               </div>
             </section>
-            <section className="icons-wrapper">
+            <section className="warehouse-details__icons-wrapper">
               <div
                 className="warehouse-details__delete"
                 onClick={() => {
@@ -120,7 +152,7 @@ function Warehouse() {
               </div>
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <p className="warehouse-details__edit">
-                  <img src={EditIcon} alt="edit icon" className="warehouse-details__edit-mobile"/>
+                  <img src={EditIcon} alt="edit icon" />
                 </p>
               </Link>
             </section>
