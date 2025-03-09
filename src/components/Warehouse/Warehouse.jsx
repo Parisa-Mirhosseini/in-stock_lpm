@@ -81,7 +81,7 @@ function Warehouse() {
               </NavLink>
               <h4 className="warehouse-details__items">ADDRESS</h4>
               <p className="warehouse-details__click-item-value">
-              {warehouse.address}, {warehouse.city}, {warehouse.country}
+                {warehouse.address}, {warehouse.city}, {warehouse.country}
               </p>
               <h4 className="warehouse-details__items">CONTACT NAME</h4>
               <p className="warehouse-details__click-item-value">

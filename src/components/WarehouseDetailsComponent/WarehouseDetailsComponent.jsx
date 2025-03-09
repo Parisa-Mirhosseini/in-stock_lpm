@@ -1,7 +1,6 @@
 import "./WarehouseDetailsComponent.scss";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import BackArrowIcon from "../../assets/icons/back-arrow.svg";
 import EditIcon from "../../assets/Icons/edit-24px.svg";
 import axios from "axios";
 import BackarrowIcon from "../../assets/Icons/arrow_back-24px.svg";
