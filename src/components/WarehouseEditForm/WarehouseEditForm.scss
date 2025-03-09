@@ -29,14 +29,15 @@
 
   &__box {
     padding: 1.2rem;
+
     @include tablet {
       flex: 1;
-      
+
     }
   }
 
   &__form-box {
-    
+
 
     @include tablet {
       flex: 1;
@@ -136,14 +137,18 @@
     justify-content: space-between;
     gap: 1rem;
     margin-top: 2rem;
-    padding: 1rem 0;
+    padding: 1rem;
     background-color: $light-grey;
     font-size: 13px;
     font-weight: 600;
-    @include tablet{
+    height: 68px;
+
+    @include tablet {
       font-size: 14px;
-    font-weight: 600;
-   flex-direction: right;
+      font-weight: 600;
+      flex-direction: right;
+      height: 70px;
+      justify-content: right;
     }
   }
 
@@ -167,6 +172,9 @@
     @include tablet {
       font-size: 0.875rem;
       line-height: 1.375rem;
+      width: 61px;
+      height: 38px;
+      
     }
   }
 
@@ -182,6 +190,11 @@
     cursor: pointer;
     height: 2.25rem;
     width: 100%;
+
+    @include tablet {
+      width: 61px;
+      height: 38px;
+    }
 
     &:hover {
       background-color: $Black;
