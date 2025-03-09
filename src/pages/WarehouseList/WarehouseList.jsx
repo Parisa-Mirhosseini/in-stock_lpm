@@ -11,10 +11,8 @@ function WarehouseList() {
           <div className="warehouseList__warehouse">
             <header className="warehouseList__header">
               {" "}
-              {/* Fixed Class Name */}
               <h1 className="warehouseList__title">Warehouses</h1>
               <div className="warehouseList__search-box">
-                {/* Search Container */}
                 <div className="warehouseList__search-container">
                   <input
                     type="text"
@@ -23,7 +21,7 @@ function WarehouseList() {
                     disabled
                   />
                   <img
-                    className="warehouseList__search-icon" // Fixed Class Name
+                    className="warehouseList__search-icon"
                     src={searchIcon}
                     alt="search icon"
                   />

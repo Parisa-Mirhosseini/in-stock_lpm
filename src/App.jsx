@@ -8,7 +8,7 @@ import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd.jsx";
 import InventoryDetails from "./pages/InventoryDetails/InventoryDetails.jsx";
 import InventoryAdd from "./pages/InventoryAdd/InventoryAdd.jsx";
 import InventoryEdit from "./pages/InventoryEdit/InventoryEdit.jsx";
-import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx"
+import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit.jsx";
 
 import "./App.scss";
 
@@ -24,7 +24,15 @@ function App() {
         <Route path="/warehouses/edit/:id" element={<WarehouseEdit />} />
         <Route path="/inventories" element={<InventoryList />} />
         <Route path="/inventories/add" element={<InventoryAdd />} />
-        <Route path="/inventories/:id" element={<InventoryDetails />} />
+        {/* Wrapped only InventoryDetails in a div with the class */}
+        <Route
+          path="/inventories/:id"
+          element={
+            <div className="inventory-background">
+              <InventoryDetails />
+            </div>
+          }
+        />
         <Route path="/inventories/edit/:id" element={<InventoryEdit />} />
       </Routes>
 
