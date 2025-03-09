@@ -1,7 +1,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// Parent container for the form
 .form-page {
   padding: 1rem;
   background-color: $light-grey;

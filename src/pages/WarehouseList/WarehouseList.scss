@@ -1,36 +1,123 @@
-@use "../../styles/partials/variables.scss" as *;
-@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
-.warehouses {
+.warehouseList {
+  padding: 1rem;
+  background-color: $light-grey;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 4rem;
+  }
   &__header {
     display: flex;
     flex-direction: column;
+    background-color: $white;
+    border-bottom: 1px solid $cloud;
 
     @include tablet {
+      display: flex;
       flex-direction: row;
-      border-bottom: none;
-      justify-content: flex-start;
     }
   }
 
   &__title {
-    text-align: left;
-  }
-
-  &__search-box {
-    display: flex;
-    flex-direction: column;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding: 1rem 0;
+    color: $graphite;
+    font-weight: 600;
 
     @include tablet {
-      flex-direction: row;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      padding: 1.5rem 0;
     }
   }
-
   &__search {
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
+    height: 2.25rem;
     border-radius: 20px;
     background: $white;
     border: 1px solid $cloud;
+    width: 100%;
+    padding: 1rem;
+
+    @include tablet {
+      display: flex;
+      height: 2.375rem;
+      width: 25%;
+    }
+
+    @include desktop {
+      width: 30%;
+    }
+  }
+
+  &__button {
+    padding: 0.75rem;
+    background-color: $indigo;
+    color: $white;
+    border: none;
+    border-radius: 1.25rem;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+
+    &:hover {
+      background-color: $graphite;
+    }
+
+    @include tablet {
+      height: 2.375rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &__search-box {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+      width: 100%;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    right: 38px;
+    bottom: 290px;
+
+    @include tablet {
+      bottom: 330px;
+      right: 210px;
+    }
+
+    @include desktop {
+      bottom: 298px;
+      right: 245px;
+    }
+  }
+
+  &__card {
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    width: 100%;
+    padding: 1rem;
+
+    @include tablet {
+      margin: auto;
+    }
   }
 }

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function InventoryEditForm() {
   const [openQuantity, setOpenQuantity] = useState(false);
   const [inventories, setInventories] = useState([]);
@@ -44,8 +46,8 @@ function InventoryEditForm() {
     const fetchData = async () => {
       try {
         const [inventoriesResp, warehousesResp] = await Promise.all([
-          axios.get("http://localhost:8080/api/inventories"),
-          axios.get("http://localhost:8080/api/warehouses"),
+          axios.get(`${BASE_URL}/api/inventories`),
+          axios.get(`${BASE_URL}/api/warehouses`),
         ]);
 
         setInventories(inventoriesResp.data);
@@ -62,9 +64,7 @@ function InventoryEditForm() {
   useEffect(() => {
     const fetchInventoryItem = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8080/api/inventories/${id}`
-        );
+        const response = await axios.get(`${BASE_URL}/api/inventories/${id}`);
         setFormValues(response.data);
       } catch (error) {
         console.error("Error fetching inventory item:", error);
@@ -107,7 +107,7 @@ function InventoryEditForm() {
 
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/inventories/${id}`,
+        `${BASE_URL}/api/inventories/${id}`,
         dataToSend
       );
       console.log("Inventory updated successfully:", response.data);
@@ -119,8 +119,9 @@ function InventoryEditForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form__box">
+    <form onSubmit={handleSubmit} className="form">
       <div className="form__form-wrap">
+        {/* Left Column: Item Details */}
         <div className="form__form-box">
           <h2 className="form__title">Item Details</h2>
 
@@ -170,9 +171,10 @@ function InventoryEditForm() {
           </select>
         </div>
 
+        {/* Right Column: Item Availability and Buttons */}
         <div className="form__fields-box">
-          <h2 className="form__label">Item Availability</h2>
-          <label className="form__label-h3" htmlFor="status">
+          <h2 className="form__field-title">Item Availability</h2>
+          <label className="form__label" htmlFor="status">
             Status
           </label>
           <div className="form__box">
@@ -253,6 +255,8 @@ function InventoryEditForm() {
               ))}
             </select>
           </div>
+
+          {/* Buttons */}
           <div className="form__btn-frame">
             <button onClick={handleCancel} className="form__btn-cancel">
               Cancel

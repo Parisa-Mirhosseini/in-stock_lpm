@@ -1,6 +1,7 @@
 import "./WarehouseList.scss";
 import Warehouse from "../../components/Warehouse/Warehouse.jsx";
 import { Link } from "react-router-dom";
+import searchIcon from "../../Assets/Icons/search-24px.svg";
 
 function WarehouseList() {
   return (
@@ -17,6 +18,11 @@ function WarehouseList() {
                   placeholder="Search..."
                   disabled
                 ></input>
+                <img
+                  className="warehouseList__icon"
+                  src={searchIcon}
+                  alt="search icon"
+                />
                 <Link
                   to={"/warehouses/add"}
                   className="warehouseList__container-add-btn"

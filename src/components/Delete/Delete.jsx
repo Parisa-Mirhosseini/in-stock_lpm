@@ -2,6 +2,8 @@ import closeIcon from "../../Assets/Icons/close-24px.svg";
 import "../Delete/Delete.scss";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function Delete({ setIsDialogOpen, selectedWarehouse, warehouseInfo }) {
   function closeModal() {
     setIsDialogOpen(false);
@@ -10,7 +12,7 @@ function Delete({ setIsDialogOpen, selectedWarehouse, warehouseInfo }) {
   async function deleteWarehouse() {
     try {
       const deleted = await axios.delete(
-        `http://localhost:8080/api/warehouses/${warehouseInfo.id}`
+        `${BASE_URL}/api/warehouses/${warehouseInfo.id}`
       );
       setIsDialogOpen(false);
     } catch (error) {

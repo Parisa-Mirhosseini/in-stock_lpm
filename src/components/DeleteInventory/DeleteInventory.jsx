@@ -2,6 +2,8 @@ import closeIcon from "../../Assets/Icons/close-24px.svg";
 import "../DeleteInventory/DeleteInventory.scss";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function Delete({ setIsDialogOpen, inventoryInfo }) {
   function closeModal() {
     setIsDialogOpen(false);
@@ -10,7 +12,7 @@ function Delete({ setIsDialogOpen, inventoryInfo }) {
   async function deleteInventory() {
     try {
       const deleted = await axios.delete(
-        `http://localhost:8080/api/inventories/${inventoryInfo.id}`
+        `${BASE_URL}/api/inventories/${inventoryInfo.id}`
       );
       setIsDialogOpen(false);
     } catch (error) {

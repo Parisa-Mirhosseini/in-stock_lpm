@@ -7,7 +7,8 @@ import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../Assets/Icons/sort-24px.svg";
 import DeleteInventory from "../DeleteInventory/DeleteInventory.jsx";
-// import DeleteInventory from "../DeleteInventory/DeleteInventory";
+
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function Inventory() {
   const [inventoryDetails, setInventoryDetails] = useState([]);
@@ -23,7 +24,7 @@ function Inventory() {
 
   const getWarehouseInventory = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/inventories`);
+      const response = await axios.get(`${BASE_URL}/api/inventories`);
       setInventoryDetails(response.data);
     } catch (error) {
       console.error("Error fetching inventory data", error);
@@ -155,6 +156,22 @@ function Inventory() {
                   {item.warehouse_name}
                 </p>
               </div>
+            </section>
+            <section className="inventory-details__icons-wrapper">
+              <div
+                className="inventory-details__delete"
+                onClick={() => {
+                  trashClickHander();
+                  trashIdHandler(item);
+                }}
+              >
+                <img src={TrashIcon} alt="trash icon" />
+              </div>
+              <Link to={`/inventories/edit/${item.id}`}>
+                <p className="inventory-details__edit">
+                  <img src={EditIcon} alt="edit icon" />
+                </p>
+              </Link>
             </section>
           </div>
         ))}
