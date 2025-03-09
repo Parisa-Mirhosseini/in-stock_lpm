@@ -1,5 +1,5 @@
 import "../WarehouseInventoryItems/WarehouseInventoryItems.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
@@ -14,6 +14,7 @@ function WarehouseInventoryItems() {
     const [inventoryDetails, setInventoryDetails] = useState([]);
     const [inventoryInfo, setInventoryInfo] = useState({});
     const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const { id } = useParams();
 
     function trashClickHander() {
         setIsDialogOpen(true);
@@ -24,7 +25,7 @@ function WarehouseInventoryItems() {
 
     const getWarehouseInventory = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}/api/inventories`);
+            const response = await axios.get(`${BASE_URL}/api/warehouses/${id}/inventories`);
             setInventoryDetails(response.data);
         } catch (error) {
             console.error("Error fetching inventory data", error);
