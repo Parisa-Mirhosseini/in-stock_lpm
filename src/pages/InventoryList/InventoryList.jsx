@@ -1,6 +1,7 @@
 import "./InventoryList.scss";
 import Inventory from "../../components/Inventory/Inventory.jsx";
 import { Link } from "react-router-dom";
+import searchIcon from "../../Assets/Icons/search-24px.svg";
 
 function InventoryList() {
   return (
@@ -17,6 +18,11 @@ function InventoryList() {
                   placeholder="Search..."
                   disabled
                 ></input>
+                <img
+                  className="inventoryList__search-icon"
+                  src={searchIcon}
+                  alt="search icon"
+                />
                 <Link
                   to={"/inventories/add"}
                   className="inventoryList__container-add-btn"

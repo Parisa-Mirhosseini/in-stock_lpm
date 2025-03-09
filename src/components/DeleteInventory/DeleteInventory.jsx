@@ -32,7 +32,7 @@ function Delete({ setIsDialogOpen, inventoryInfo }) {
             Delete {inventoryInfo.item_name} inventory item?
           </h1>
           <p className="delete-inventory__description">
-            Please confirm that you'd like to delete the
+            Please confirm that you'd like to delete the{" "}
             {inventoryInfo.item_name} from the inventory list. You won't be able
             to undo this action.
           </p>

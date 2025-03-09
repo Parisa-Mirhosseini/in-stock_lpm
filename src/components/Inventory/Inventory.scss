@@ -25,7 +25,6 @@
 
     &:hover {
       @include desktop {
-        background-color: transparentize($indigo, 0.93);
       }
     }
 
@@ -33,7 +32,17 @@
       padding: 1rem 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 100%;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+
+  &__link-box {
+    @include tablet {
+      display: flex;
     }
   }
 
@@ -64,6 +73,19 @@
 
     @include tablet {
       display: none;
+    }
+  }
+
+  &__click-item,
+  &__click-item-value,
+  &__quantity-value,
+  &__warehouse,
+  &__icons-box,
+  &__status.in-stock,
+  &__status.out-of-stock {
+    @include tablet {
+      flex: 1;
+      text-align: left;
     }
   }
 
@@ -126,10 +148,16 @@
   }
   &__status {
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     padding: 0.25rem 0.5rem;
     border-radius: 20px;
-    display: inline-block;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
 
     &.in-stock {
       background-color: rgba(21, 132, 99, 0.1);

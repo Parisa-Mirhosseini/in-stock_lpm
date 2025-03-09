@@ -6,6 +6,7 @@ import TrashIcon from "../../Assets/Icons/delete_outline-24px.svg";
 import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../Assets/Icons/sort-24px.svg";
+import Delete from "../Delete/Delete.jsx";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -29,13 +30,20 @@ function Warehouse() {
       console.error("Error fetching warehouse data", error);
     }
   };
-  
+
   useEffect(() => {
     getWarehouses();
   }, [isDialogOpen]);
 
   return (
     <>
+      {isDialogOpen && (
+        <Delete
+          setIsDialogOpen={setIsDialogOpen}
+          warehouseDetails={warehouseDetails}
+          warehouseInfo={warehouseInfo}
+        />
+      )}
       <section className="warehouse-details__hidden">
         <h4 className="warehouse-details__hidden-icon">WAREHOUSE</h4>
         <h4 className="warehouse-details__hidden-icon">ADDRESS</h4>
@@ -47,7 +55,10 @@ function Warehouse() {
       <section className="warehouse-details">
         {warehouseDetails.map((warehouse) => (
           <div className="tablet" key={warehouse.id}>
-            <section key={warehouse.id} className="warehouse-details__container-i">
+            <section
+              key={warehouse.id}
+              className="warehouse-details__container-i"
+            >
               <h4 className="warehouse-details__items">WAREHOUSE</h4>
               <NavLink to={`/warehouses/${warehouse.id}`} className="column">
                 <h3 className="warehouse-details__click-item">
@@ -80,7 +91,7 @@ function Warehouse() {
                   <img src={TrashIcon} alt="delete icon" />
                 </div>
                 <Link to={`/warehouses/edit/${warehouse.id}`}>
-                    <img src={EditIcon} alt="edit icon" />
+                  <img src={EditIcon} alt="edit icon" />
                 </Link>
               </section>
             </section>
@@ -93,7 +104,7 @@ function Warehouse() {
                 <h4 className="item_label">WAREHOUSE</h4>
                 <NavLink to={`/warehouses/${warehouse.id}`}>
                   <h3 className="warehouse-details__click-item">
-                  {warehouse.warehouse_name}
+                    {warehouse.warehouse_name}
                     <img src={ArrowIcon} alt="arrow icon" />
                   </h3>
                 </NavLink>
@@ -104,8 +115,11 @@ function Warehouse() {
                 <h4 className="item_label">CONTACT NAME</h4>
                 <p className="item_value">{warehouse.contact_name}</p>
                 <h4 className="item_label">CONTACT INFO</h4>
-                <p className="item_value"> {warehouse.contact_phone} <br />
-                {warehouse.contact_email}</p>
+                <p className="item_value">
+                  {" "}
+                  {warehouse.contact_phone} <br />
+                  {warehouse.contact_email}
+                </p>
               </div>
             </section>
             <section className="icons-wrapper">
@@ -120,7 +134,11 @@ function Warehouse() {
               </div>
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <p className="warehouse-details__edit">
-                  <img src={EditIcon} alt="edit icon" className="warehouse-details__edit-mobile"/>
+                  <img
+                    src={EditIcon}
+                    alt="edit icon"
+                    className="warehouse-details__edit-mobile"
+                  />
                 </p>
               </Link>
             </section>
