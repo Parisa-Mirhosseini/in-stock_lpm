@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function InventoryAdd() {
   const [openQuantity, setOpenQuantity] = useState(false);
   const [inventories, setInventories] = useState([]);
@@ -70,10 +72,7 @@ function InventoryAdd() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/inventories/",
-        formValues
-      );
+      const response = await axios.post(`${BASE_URL}/inventories/`, formValues);
       console.log("New inventory added:", response.data);
       navigate("/inventories");
     } catch (error) {
@@ -86,8 +85,8 @@ function InventoryAdd() {
     const fetchData = async () => {
       try {
         const [inventoriesResp, warehousesResp] = await Promise.all([
-          axios.get("http://localhost:8080/api/inventories"),
-          axios.get("http://localhost:8080/api/warehouses"),
+          axios.get(`${BASE_URL}/api/inventories`),
+          axios.get(`${BASE_URL}/api/warehouses`),
         ]);
 
         setInventories(inventoriesResp.data);

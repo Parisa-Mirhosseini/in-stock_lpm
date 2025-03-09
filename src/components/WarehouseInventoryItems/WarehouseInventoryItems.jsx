@@ -1,4 +1,3 @@
-
 import "../WarehouseInventoryItems/WarehouseInventoryItems.scss";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -8,30 +7,31 @@ import EditIcon from "../../Assets/Icons/edit-24px.svg";
 import ArrowIcon from "../../Assets/Icons/chevron_right-24px.svg";
 import DeleteInventory from "../DeleteInventory/DeleteInventory.jsx";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function WarehouseInventoryItems() {
-    const [inventoryDetails, setInventoryDetails] = useState([]);
-    const [inventoryInfo, setInventoryInfo] = useState({});
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [inventoryDetails, setInventoryDetails] = useState([]);
+  const [inventoryInfo, setInventoryInfo] = useState({});
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-    function trashClickHander() {
-        setIsDialogOpen(true);
-    }
-    function trashIdHandler(inventory) {
-        setInventoryInfo(inventory);
-    }
+  function trashClickHander() {
+    setIsDialogOpen(true);
+  }
+  function trashIdHandler(inventory) {
+    setInventoryInfo(inventory);
+  }
 
-    const getWarehouseInventory = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8080/api/inventories`);
-            setInventoryDetails(response.data);
-        } catch (error) {
-            console.error("Error fetching inventory data", error);
-        }
-    };
-    useEffect(() => {
-        getWarehouseInventory();
-    }, [isDialogOpen]);
+  const getWarehouseInventory = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/api/inventories`);
+      setInventoryDetails(response.data);
+    } catch (error) {
+      console.error("Error fetching inventory data", error);
+    }
+  };
+  useEffect(() => {
+    getWarehouseInventory();
+  }, [isDialogOpen]);
 
     return (
         <>

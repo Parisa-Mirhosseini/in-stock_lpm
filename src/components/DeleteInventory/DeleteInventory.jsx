@@ -2,6 +2,8 @@ import closeIcon from "../../Assets/Icons/close-24px.svg";
 import "../DeleteInventory/DeleteInventory.scss";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function Delete({ setIsDialogOpen, inventoryInfo }) {
   function closeModal() {
     setIsDialogOpen(false);
@@ -10,7 +12,7 @@ function Delete({ setIsDialogOpen, inventoryInfo }) {
   async function deleteInventory() {
     try {
       const deleted = await axios.delete(
-        `http://localhost:8080/api/inventories/${inventoryInfo.id}`
+        `${BASE_URL}/api/inventories/${inventoryInfo.id}`
       );
       setIsDialogOpen(false);
     } catch (error) {
@@ -32,7 +34,7 @@ function Delete({ setIsDialogOpen, inventoryInfo }) {
             Delete {inventoryInfo.item_name} inventory item?
           </h1>
           <p className="delete-inventory__description">
-            Please confirm that you'd like to delete the
+            Please confirm that you'd like to delete the{" "}
             {inventoryInfo.item_name} from the inventory list. You won't be able
             to undo this action.
           </p>
