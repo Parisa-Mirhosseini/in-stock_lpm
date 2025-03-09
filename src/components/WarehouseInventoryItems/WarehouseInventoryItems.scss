@@ -90,8 +90,13 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     width: fit-content;
+
     @include tablet {
-       margin-right: 6rem;
+      margin-right: 6rem;
+    }
+
+    @include desktop {
+      margin-right: 10rem;
     }
 
 
@@ -106,7 +111,7 @@
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
 
-    
+
 
     }
   }
@@ -132,6 +137,13 @@
       flex-wrap: nowrap;
       align-items: center;
       padding: 1rem 4rem 1rem 2rem;
+      justify-content: center;
+    }
+
+    @include desktop {
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 1rem 4rem 1rem 4rem;
       justify-content: center;
 
     }
