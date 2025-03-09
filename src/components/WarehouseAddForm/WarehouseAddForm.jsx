@@ -97,7 +97,7 @@ function WarehouseAddForm() {
       <div className="addwarehouse__form__form-wrap">
         <div className="addwarehouse__form__form-box">
           <div className="addwarehouse__form__box--each">
-              {/* Warehouse Details */}
+            {/* Warehouse Details */}
             <h2 className="addwarehouse__form__title">Warehouse Details</h2>
             <label
               className="addwarehouse__form__label"
@@ -162,7 +162,7 @@ function WarehouseAddForm() {
           </div>
         </div>
 
- {/* Contact Details */}
+        {/* Contact Details */}
         <div className="addwarehouse__form__box">
           <h2 className="addwarehouse__form__title">Contact Details</h2>
           <label className="addwarehouse__form__label" htmlFor="contact_name">

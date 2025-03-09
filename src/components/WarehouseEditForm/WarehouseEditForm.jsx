@@ -137,21 +137,21 @@ function WarehouseEditForm() {
             </div>
           ))}
         </div>
-        </div>
+      </div>
 
-        {/* Buttons */}
-        <section className="warehouseedit__form__btn-frame">
-          <button
-            type="button"
-            onClick={handleCancel}
-            className="warehouseedit__form__btn-cancel"
-          >
-            Cancel
-          </button>
-          <button type="submit" className="warehouseedit__form__btn-active">
-            Save
-          </button>
-        </section>
+      {/* Buttons */}
+      <section className="warehouseedit__form__btn-frame">
+        <button
+          type="button"
+          onClick={handleCancel}
+          className="warehouseedit__form__btn-cancel"
+        >
+          Cancel
+        </button>
+        <button type="submit" className="warehouseedit__form__btn-active">
+          Save
+        </button>
+      </section>
     </form>
   );
 }
