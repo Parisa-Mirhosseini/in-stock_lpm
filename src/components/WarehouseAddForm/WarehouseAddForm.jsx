@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../components/WarehouseAddForm/WarehouseAddForm.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -47,25 +47,7 @@ function WarehouseAddForm() {
     return newErrors;
   };
 
-  // for (const key in formData) {
-  //     if (!formData[key].trim()) {
-  //         newErrors[key] = `${key.replace("_", " ")} is required.`;
-  //     }
-  // }
 
-  // Validate email format
-  // if (!/\S+@\S+\.\S+/.test(data.contact_email)) {
-  //     newErrors.contact_email = "Invalid email address.";
-  // }
-
-  // // Validate phone number format
-  // if (!/^\d{10,11}$/.test(formData.contact_phone)) {
-  //     newErrors.contact_phone = "Invalid phone number (must be 10 or 11 digits).";
-  // }
-
-  //     setErrors(newErrors);
-  //     return Object.keys(newErrors).length === 0;
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
