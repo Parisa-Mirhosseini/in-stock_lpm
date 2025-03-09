@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function InventoryEdit() {
   return (
     <section className="form-page">
-      <div className="form-page__containerr">
+      <div className="form-page__container">
         <div className="form-page__wrap">
           <NavLink className="form-page__icon" to="/inventories">
             <img src={arrowIcon} alt="back arrow" />

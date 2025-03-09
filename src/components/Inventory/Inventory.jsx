@@ -109,11 +109,19 @@ function Inventory() {
                     trashIdHandler(item);
                   }}
                 >
-                  <img src={TrashIcon} alt="delete icon" />
+                  <img
+                    className="inventory-details__icon"
+                    src={TrashIcon}
+                    alt="delete icon"
+                  />
                 </div>
                 <Link to={`/inventories/edit/${item.id}`}>
                   <p className="inventory-details__edit">
-                    <img src={EditIcon} alt="edit icon" />
+                    <img
+                      inventory-details__icon
+                      src={EditIcon}
+                      alt="edit icon"
+                    />
                   </p>
                 </Link>
               </section>

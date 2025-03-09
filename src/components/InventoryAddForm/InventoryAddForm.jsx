@@ -152,8 +152,8 @@ function InventoryAdd() {
           </select>
         </div>
 
-        <div className="form">
-          <h2 className="form__label">Item Availability</h2>
+        <div className="form__fields">
+          <h2 className="form__fields-title">Item Availability</h2>
           <label className="form__label" htmlFor="status">
             Status
           </label>
