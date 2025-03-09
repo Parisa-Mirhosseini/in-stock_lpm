@@ -29,7 +29,8 @@
       margin-left: 0.5rem;
       cursor: pointer;
     }
-    @include tablet{
+
+    @include tablet {
       justify-content: center;
     }
   }
@@ -89,15 +90,24 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     width: fit-content;
+    @include tablet {
+       margin-right: 6rem;
+    }
+
+
 
     &.in-stock {
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
+
     }
 
     &.out-of-stock {
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
+
+    
+
     }
   }
 
@@ -121,9 +131,9 @@
     @include tablet {
       flex-wrap: nowrap;
       align-items: center;
-      padding: 1rem 1.5rem 1rem  1.5rem;
+      padding: 1rem 4rem 1rem 2rem;
       justify-content: center;
-      
+
     }
   }
 

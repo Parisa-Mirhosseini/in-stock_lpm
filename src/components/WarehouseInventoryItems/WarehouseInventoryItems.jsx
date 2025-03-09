@@ -83,7 +83,7 @@ function WarehouseInventoryItems() {
                             </p>
                             <h4 className="warehouseinventory-details__items">STATUS</h4>
                             <h3
-                                className={`inventory-details__status ${item.status === "In Stock" ? "in-stock" : "out-of-stock"
+                                className={`warehouseinventory-details__status ${item.status === "In Stock" ? "in-stock" : "out-of-stock"
                                     }`}
                             >
                                 {item.status}
