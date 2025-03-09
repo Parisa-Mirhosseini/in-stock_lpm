@@ -1,24 +1,15 @@
-@use "./variables";
-
-// @mixin font-face($name, $path, $weight, $style: normal, $format: "woff") {
-//     @font-face {
-//         font-family: $name;
-//         src: url($path) format($format);
-//         font-weight: $weight;
-//         font-style: $style;
-//     }
-// }
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
 
 @font-face {
-  font-family: "Titillium Web", sans-serif;
-  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+  font-family: "Titillium Web Local";
+  src: url("../../Assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Titillium Web", sans-serif;
-  src: url(/src/Assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf);
+  font-family: "Titillium Web Local";
+  src: url("../../Assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
