@@ -115,7 +115,7 @@ function WarehouseInventoryItems() {
                 ))}
                 {inventoryDetails.map((item) => (
                     <div className="warehouseinventory-details__mobile-container" key={item.id}>
-                        <section key={item.id} className="inventory-details__mobile">
+                        <section key={item.id} className="warehouseinventory-details__mobile">
                             <div className="warehouseinventory-details__test-wrapper">
                                 <h4 className="warehouseinventory-details__item_label">
                                     INVENTORY ITEM

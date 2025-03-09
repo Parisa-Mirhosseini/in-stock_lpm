@@ -22,7 +22,18 @@
       flex-direction: row;
     }
   }
+&__inventory{
+  @include tablet{
+    padding-right:2rem;
+    padding-left:2rem;
+  }
 
+  @include desktop{
+    padding-right:4rem;
+    padding-left:4rem;
+
+  }
+}
   &__title {
     font-size: 1.75rem;
     line-height: 2.25rem;
@@ -120,10 +131,11 @@
     @include tablet {
       margin: auto;
       top: -8.5rem;
-      padding: 1.5rem;
+      padding: 1.5rem 0;
     }
     @include desktop {
       top: -10.5rem;
+      padding: 1.5rem 0;
     }
   }
 }
