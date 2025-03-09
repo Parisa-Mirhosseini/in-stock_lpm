@@ -72,7 +72,10 @@ function InventoryAdd() {
     }
 
     try {
-      const response = await axios.post(`${BASE_URL}/inventories/`, formValues);
+      const response = await axios.post(
+        `${BASE_URL}/api/inventories`,
+        formValues
+      );
       console.log("New inventory added:", response.data);
       navigate("/inventories");
     } catch (error) {
@@ -144,9 +147,11 @@ function InventoryAdd() {
             <option value="" disabled>
               Please select
             </option>
-            {inventories.map((inventory) => (
-              <option key={inventory.id} value={inventory.category}>
-                {inventory.category}
+            {[
+              ...new Set(inventories.map((inventory) => inventory.category)),
+            ].map((category, index) => (
+              <option key={index} value={category}>
+                {category}
               </option>
             ))}
           </select>

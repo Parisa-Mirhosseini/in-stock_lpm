@@ -67,7 +67,7 @@
     color: $slate;
     font-weight: 600;
     font-size: 0.75rem;
-    margin-bottom: 0.25rem;
+    padding: 0.5rem 0;
   }
 
   &__item_value {
@@ -82,10 +82,19 @@
     color: $indigo;
     font-weight: 600;
     font-size: 0.875rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
 
     img {
       margin-left: 0.5rem;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   &__status {
@@ -95,6 +104,11 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     width: fit-content;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
 
     &.in-stock {
       background-color: rgba(21, 132, 99, 0.07);
