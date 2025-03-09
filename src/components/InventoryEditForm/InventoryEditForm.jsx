@@ -248,9 +248,11 @@ function InventoryEditForm() {
               <option value="" disabled>
                 {formValues.warehouse_name}
               </option>
-              {warehouses.map((warehouse) => (
-                <option key={warehouse.id} value={warehouse.id}>
-                  {warehouse.warehouse_name}
+              {[
+                ...new Set(inventories.map((inventory) => inventory.category)),
+              ].map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
                 </option>
               ))}
             </select>
