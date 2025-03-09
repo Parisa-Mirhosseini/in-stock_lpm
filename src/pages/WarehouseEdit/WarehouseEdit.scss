@@ -27,8 +27,11 @@
         align-items: self-end;
         gap: 1rem;
         padding: 1rem;
-        padding-left: 32px;
+        padding-left: 16px;
         border-bottom: 1px solid $slate;
+        @include tablet {
+            padding-right: 32px;
+          }
     }
 
     &__icon {
@@ -38,14 +41,16 @@
     }
 
     &__item {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
+        font-size: 28px;
+    line-height: 36px;
+        font-weight: 600;
         color: $Black;
         margin: 0;
 
         @include tablet {
-            font-size: 2rem;
-            line-height: 2.5rem;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 600;
         }
     }
 }
