@@ -11,6 +11,10 @@
     flex-direction: row;
     padding: 1.5rem;
     align-items: center;
+    @include desktop{
+      padding-right:4rem;
+      padding-left:4rem;
+    }
   }
 
   &__arrow {
@@ -83,6 +87,13 @@
     @include tablet {
       display: flex;
       border-bottom: none;
+      padding: 2rem;
+    }
+    @include desktop {
+      display: flex;
+      border-bottom: none;
+      padding-right:4rem;
+      padding-left:4rem;
     }
   }
 

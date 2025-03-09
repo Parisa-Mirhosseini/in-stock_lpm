@@ -11,8 +11,6 @@
       justify-content: space-between;
       padding: 0 1.5rem;
       background-color: $light-grey;
-      border-top: 1px solid $cloud;
-      border-bottom: 1px solid $cloud;
     }
   }
 
@@ -44,7 +42,7 @@
   }
 
   &__mobile {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -63,6 +61,7 @@
     font-weight: 600;
     font-size: 0.75rem;
     margin-bottom: 0.25rem;
+    padding-top: 24px;
   }
 
   &__item_value {
@@ -99,20 +98,14 @@
       margin-right: 10rem;
     }
 
-
-
     &.in-stock {
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
-
     }
 
     &.out-of-stock {
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
-
-
-
     }
   }
 
@@ -193,14 +186,18 @@
   &__icons-box {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 24px;
+    height:24px;
     margin-top: 1rem;
 
     @include tablet {
       margin-top: 0;
       justify-content: flex-end;
       gap: 1rem;
+      width: 24px;
+      height:24px;
     }
+
   }
 }
 
