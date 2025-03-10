@@ -1,0 +1,220 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+// Form container
+.addwarehouse__form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Titillium Web", sans-serif;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__form-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet {
+      flex: 1;
+      flex-direction: row;
+    }
+  }
+
+  &__box {
+    padding: 1.2rem;
+
+    @include tablet {
+      flex: 1;
+      padding-left: 32px;
+      padding-right: 32px;
+
+    }
+  }
+
+  &__form-box {
+
+
+    @include tablet {
+      flex: 1;
+
+    }
+  }
+
+  &__box--each {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+
+    border-bottom: 1px solid $cloud;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @include tablet {
+        border-right: 1px solid $cloud;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    }
+
+    @include tablet {
+      border-bottom: none;
+      flex: 1;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: $Black;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    background-color: $white;
+    margin-bottom: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $indigo;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__text,
+  &__dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    color: $Black;
+    background-color: $white;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__btn-frame {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: $light-grey;
+    font-size: 13px;
+    font-weight: 600;
+    height: 68px;
+
+    @include tablet {
+      font-size: 14px;
+      font-weight: 600;
+      flex-direction: right;
+      height: 70px;
+      justify-content: right;
+    }
+  }
+
+  &__btn-cancel {
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    background-color: $white;
+    color: $slate;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    height: 2.25rem;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid $indigo;
+      color: $indigo;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      width: 61px;
+      height: 38px;
+
+    }
+  }
+
+  &__btn-active {
+    padding: 0.5rem;
+    border: none;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    border-radius: 20px;
+    background-color: $indigo;
+    color: $white;
+    font-weight: 600;
+    cursor: pointer;
+    height: 2.25rem;
+    width: 100%;
+
+    @include tablet {
+      width: 138px;
+      height: 38px;
+    }
+
+    &:hover {
+      background-color: $Black;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

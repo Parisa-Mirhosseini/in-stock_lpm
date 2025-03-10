@@ -1,0 +1,56 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+// Parent container for the form
+.form-page {
+    padding: 1rem;
+    background-color: $light-grey;
+
+    &__container {
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: $white;
+        box-shadow: 2px 2px 1px $cloud;
+        border-radius: 4px;
+        position: relative;
+        top: -5.5rem;
+
+        @include tablet {
+            position: relative;
+            top: -5.5rem;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: self-end;
+        gap: 1rem;
+        padding: 1rem;
+        padding-left: 16px;
+        border-bottom: 1px solid $slate;
+        @include tablet {
+            padding-right: 32px;
+          }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    &__item {
+        font-size: 28px;
+    line-height: 36px;
+        font-weight: 600;
+        color: $Black;
+        margin: 0;
+
+        @include tablet {
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 600;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form-page {
+  padding: 1rem;
+  background-color: $light-grey;
+
+  @include tablet {
+    padding: 1.5rem;
+  }
+
+  &__container {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: $white;
+    box-shadow: 2px 2px 1px $cloud;
+    border-radius: 4px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $slate;
+    background-color: $white;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  &__item {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    color: $Black;
+    margin: 0;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+}
